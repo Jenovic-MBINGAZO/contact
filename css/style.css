@@ -1,4 +1,94 @@
-/* ---- Formatting my page ---- */
+/*  Formatting my page */
+/* Variable variable   */
+:root{
+    --mainColor-blancGivre : rgb(247,250,252);
+    --button-color : rgb(193,231,254);
+    --margin-global : 0;
+    --color-text : rgb(95,101,123);
+    --hover-links-color : rgb(240,243,244);
+    --font-family : "Poppins" , sans-serif;
+}
+
+/* my property */
+body{
+    margin: var(--margin-global);
+    background-color: var(--mainColor-blancGivre);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: var(--font-family);
+    width: 100%;
+}
+.header{
+    background-color: var(--mainColor-blancGivre);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+}
+.header__topbar{
+    display: flex;
+    gap: 25px;
+}
+.topbar__logo{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.humberger__img--size{
+    width: 24px;
+    height: 24px;
+}
+.img--size{
+    width: 44px;
+    height: 40px;
+}
+.links--size{
+    font-size: 22px;
+}
+.links--decoration{
+    text-decoration: none;
+    color: var(--color-text);
+}
+.icone__link--size{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+.header__search{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.search__contacts{
+    display: flex;
+    background-color: var(--hover-links-color);
+    width:63%;
+    height: auto;
+    justify-content: left;
+    align-items: center;
+    margin-left: 70px;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    gap: 20px;
+    border-radius: 5px;
+}
+.contacts__icone{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.contacts__search{
+    width: 100%;
+}
+.search__input{
+    padding: 12px;
+    width: 90%;
+    border:  none;
+    background-color: var(--hover-links-color)
+}
+
+
 
 
 
