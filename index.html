@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Contacts</title>
+    <link rel="icon" type="image/x-icon" href="img/logo/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,6 +52,77 @@
             </div>
         </div>
     </header>
-    <main class="main"></main>
+    <main class="main">
+        <div class="main__menu">
+            <div class="menu__add-contact menu__add-contact--center menu__add-contact--padding-y">
+               <a href="" class="add-contact__button icone__link">
+                    <img src="img/logo/add.png" alt="Ajout contact" class="link__img">
+                    <div class="add-contact__text">
+                        Créer un contact
+                    </div>
+               </a>
+            </div>
+            <div class="menu__add-contact menu__add-contact--padding-x menu__add-contact--width">             
+                <a href="" class="add-contact__button icone__link  add-contact__button--bg-color">
+                    <img src="img/logo/user.png" alt="Ajout contact" class="link__img link__img--size">
+                    <div class="add-contact__text add-contact__text--fw">
+                       Contact
+                    </div>
+                    <div class="add-contact__compteur">0</div>
+               </a>
+             </div>
+            <div class="menu__add-contact menu__add-contact--bg-color menu__add-contact--padding-x menu__add-contact--width">
+                <a href="" class="add-contact__button icone__link">
+                    <img src="img/logo/contact-frequent.png" alt="Ajout contact" class="link__img link__img--size">
+                    <div class="add-contact__text">
+                       Fréquents
+                    </div>
+               </a>
+            </div>
+            <div class="menu__add-contact menu__add-contact--bg-color menu__add-contact--padding-x menu__add-contact--width">
+               
+                <div class="add-contact__text  add-contact__text--fw">
+                    Libellés
+                </div>
+                <div class="add-contact__libele add-contact__text--fw">
+                    <a href="" class="add-contact__button icone__link">
+                        <img src="img/logo/add.png" alt="Ajout contact" class="link__img link__img--size link__img--padding-y">
+                   </a>
+                </div>
+            </div>
+        </div>
+        <div class="main__content">
+            <p class="content--title">
+                Contacts (0)
+            </p>
+            <!--
+            <div class="content__header content__header--size">
+                <div class="header__name header__name--padding-x">
+                    Nom
+                </div>
+                <div class="header__couriel header__couriel--padding-x">
+                    Email
+                </div>
+                <div class="header__tel header__tel--padding-x">
+                    Numéro de téléphone
+                </div>
+                <div class="header__function header__function--padding-x">
+                    Fonction et entreprise
+                </div>
+                <div class="header__libelle">
+                    Libellés
+                </div>
+            </div>
+            <hr>
+             -->
+
+             <div class="content-img">
+                <img src="https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell1.png" alt="" class="img-width">
+                <p class="img-description">
+                    Aucun contact pour l'instant
+                </p>
+             </div>
+        </div>
+    </main>
 </body>
 </html>

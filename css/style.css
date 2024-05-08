@@ -7,22 +7,32 @@
     --color-text : rgb(95,101,123);
     --hover-links-color : rgb(240,243,244);
     --font-family : "Poppins" , sans-serif;
+    --font-size-paragraphe : 14px;
+    --btn-padding-top: 15px;
+    --btn-padding-bottom: 15px;
+    --btn-border-raduis : 2rem;
+    --btn-gap : 13px;
+    --header-padding--rigth :100px;
+    --content-header-size : 14px;
 }
 
 /* my property */
 body{
     margin: var(--margin-global);
     background-color: var(--mainColor-blancGivre);
-    padding-left: 20px;
-    padding-right: 20px;
     font-family: var(--font-family);
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .header{
     background-color: var(--mainColor-blancGivre);
-    padding: 12px;
     display: flex;
     align-items: center;
+    width: 95%;
+    padding-left: 2.5%;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .header__topbar{
     display: flex;
@@ -57,12 +67,12 @@ body{
 .header__search{
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 55%;
 }
 .search__contacts{
     display: flex;
     background-color: var(--hover-links-color);
-    width:63%;
+    width:100%;
     height: auto;
     justify-content: left;
     align-items: center;
@@ -70,7 +80,7 @@ body{
     align-items: center;
     padding-top: 5px;
     padding-bottom: 5px;
-    gap: 20px;
+    /*gap: 20px;*/
     border-radius: 5px;
 }
 .contacts__icone{
@@ -85,13 +95,113 @@ body{
     padding: 12px;
     width: 90%;
     border:  none;
-    background-color: var(--hover-links-color)
+    background-color: var(--hover-links-color);
+    font-size: 1rem;
+}
+/* Hand page design */
+.main{
+    width: 90%;
+    padding-left: 2.5%;
+    display: flex;
+    padding-top: 20px;
+}
+.main__menu{
+    width: 25%;
+}
+.menu__add-contact{
+    gap: 150px;
+    background-color: var(--button-color);
+    width: 60%;
+    padding-top: var(--btn-padding-top);
+    padding-bottom: var(--btn-padding-bottom);
+    border-radius: 0.9rem;
+    display: flex;
+}
+.menu__add-contact--bg-color{
+    background-color: var(--mainColor-blancGivre);
+}
+.menu__add-contact--padding-x{
+    padding-left: 20px;
+}
+.menu__add-contact--center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu__add-contact--width{
+    width: 80%;
+    border-radius: var(--btn-border-raduis);
+}
+.menu__add-contact--padding-y{
+    margin-bottom: 15px;
+}
+.menu__add-contact a{
+    text-decoration: none;
+    color: black;
+    font-size: var(--font-size-paragraphe);
+}
+.main__content{
+    width: 80%;
+    background-color: rgb(255,255,255);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    height: 80vh;
+}
+.add-contact__button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--btn-gap);
+}
+.add-contact__button .link__img{
+    width: 20px;
+    height: 20px;
+}
+.add-contact__text{
+    display: flex;
+    justify-content: space-between;
+}
+.add-contact__text--fw{
+    font-weight: bold;
+}
+.add-contact__compteur{
+    padding-left: 5.5rem;
+}
+.link__img--size{
+    width: 24px;
+    height: 24px;
+}
+.content__header{
+    display: flex;
+    flex-direction: row;
+}
+.content__header--size{
+    font-size: var(--content-header-size);
+}
+.header__name--padding-x{
+    padding-right: 130px;
+}
+.header__couriel--padding-x{
+    padding-right: var(--header-padding--rigth);
+}
+.content--title {
+    font-size: 24px;
+    color: var(--color-text);
 }
 
-
-
-
-
-
-
-
+.header__tel--padding-x{
+    padding-right: var(--header-padding--rigth);
+}
+.header__function--padding-x{
+    padding-right: var(--header-padding--rigth);
+}
+.img-width{
+    width: 220px;
+    height: 220px;
+    display: block;
+    margin: 0 auto;
+}
+.img-description{
+    text-align: center;
+}
