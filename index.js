@@ -19,7 +19,26 @@ For any questions or improvement suggestions, please contact the author at [djod
 function manageDomValues(id) {
     return document.getElementById(id);
 }
-console.log(manageDomValues("imgInfo").id);
+const domValue = manageDomValues("compteur");
+let deleteSpace  = domValue.textContent.trim() ;
+if (deleteSpace === "Contacts (0)") {
+    const domValue = manageDomValues("mainContent");
+    domValue.remove()
+    const div = document.createElement('div');
+    div.classList = "content-img";
+    const main = manageDomValues("main");
+    main.append(div);
+   console.log("Bonjour");
+} else {
+    console.log("erreur");
+}
+
+
+
+
+
+
+
 
 
 

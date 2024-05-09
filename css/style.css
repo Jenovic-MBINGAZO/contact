@@ -14,6 +14,7 @@
     --btn-gap : 13px;
     --header-padding--rigth :100px;
     --content-header-size : 14px;
+    --padding-left :20px ;
 }
 
 /* my property */
@@ -109,19 +110,20 @@ body{
     width: 25%;
 }
 .menu__add-contact{
-    gap: 150px;
+    /*gap: 15px;*/
     background-color: var(--button-color);
     width: 60%;
     padding-top: var(--btn-padding-top);
     padding-bottom: var(--btn-padding-bottom);
     border-radius: 0.9rem;
     display: flex;
+    /*background-color: green;*/
 }
 .menu__add-contact--bg-color{
     background-color: var(--mainColor-blancGivre);
 }
 .menu__add-contact--padding-x{
-    padding-left: 20px;
+    padding-left: var(--padding-left);
 }
 .menu__add-contact--center{
     display: flex;
@@ -153,6 +155,8 @@ body{
     flex-direction: row;
     align-items: center;
     gap: var(--btn-gap);
+    /*background-color: red;*/
+    width: 100%;
 }
 .add-contact__button .link__img{
     width: 20px;
@@ -164,26 +168,40 @@ body{
 }
 .add-contact__text--fw{
     font-weight: bold;
+    /*background-color: red;*/
+    display: flex;
+
+    /*padding-right: 2rem;*/
 }
 .add-contact__compteur{
-    padding-left: 5.5rem;
+    /*padding-left: 5.5rem;*/
+    width: 80%;
+    /*background-color: red;*/
+    text-align: right;
+    padding-right: 2rem;
 }
 .link__img--size{
     width: 24px;
     height: 24px;
+    /*padding-right: var(--btn-gap);*/
 }
 .content__header{
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
+    /*background-color: red;*/
+    width: 100%;
 }
 .content__header--size{
     font-size: var(--content-header-size);
 }
-.header__name--padding-x{
-    padding-right: 130px;
+.header__name{
+    width: 20%;
+    /*background-color: yellow;*/
 }
 .header__couriel--padding-x{
-    padding-right: var(--header-padding--rigth);
+    /*padding-right: var(--header-padding--rigth);*/
+    width: 20%;
+    /*background-color: blue;*/
 }
 .content--title {
     font-size: 24px;
@@ -191,10 +209,18 @@ body{
 }
 
 .header__tel--padding-x{
-    padding-right: var(--header-padding--rigth);
+    /*padding-right: var(--header-padding--rigth);*/
+    width: 20%;
+    /*background-color: yellow;*/
 }
 .header__function--padding-x{
-    padding-right: var(--header-padding--rigth);
+    /*padding-right: var(--header-padding--rigth);*/
+    width: 20%;
+    /*background-color: blue;*/
+}
+.header__libelle{
+    width: 20%;
+    /*background-color: yellow;*/
 }
 .img-width{
     width: 220px;
