@@ -16,27 +16,36 @@ For any questions or improvement suggestions, please contact the author at [djod
 
 
 //--------manageDomValues
+//
+
+
 function manageDomValues(id) {
     return document.getElementById(id);
 }
-const domValue = manageDomValues("compteur");
-let deleteSpace  = domValue.textContent.trim() ;
-if (deleteSpace === "Contacts (0)") {
-    const domValue = manageDomValues("mainContent");
-    domValue.remove()
-    const div = document.createElement('div');
-    div.classList = "content-img";
-    const main = manageDomValues("main");
-    main.append(div);
-   console.log("Bonjour");
-} else {
-    console.log("erreur");
-}
+
+const btn = manageDomValues("btn");
 
 
+btn.addEventListener("DOMContentLoaded", function() {
+    // Sélectionner l'élément à supprimer
+    let elementASupprimer = btn.getElementById("elementASupprimer");
 
+    // Supprimer l'élément si le nombre de contacts est 0 lors du chargement initial
+    if (elementASupprimer && elementASupprimer.textContent.trim() === "Contacts (0)") {
+        elementASupprimer.remove();
+    }
 
+    // Sélectionner le bouton qui déclenche la suppression de l'élément
+    let boutonSuppression = document.getElementById("boutonSuppression");
 
+    // Ajouter un écouteur d'événements de clic au bouton
+    boutonSuppression.addEventListener("click", function(event) {
+        // Supprimer l'élément lorsque le bouton est cliqué
+        if (elementASupprimer) {
+            elementASupprimer.remove();
+        }
+    });
+});
 
 
 

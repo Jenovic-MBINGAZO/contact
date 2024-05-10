@@ -99,6 +99,9 @@ body{
     background-color: var(--hover-links-color);
     font-size: 1rem;
 }
+.search__input:focus{
+    outline: none; /* Supprime la bordure de focus */
+}
 /* Hand page design */
 .main{
     width: 90%;
@@ -112,10 +115,11 @@ body{
 .menu__add-contact{
     /*gap: 15px;*/
     background-color: var(--button-color);
-    width: 60%;
+    width: 70%;
     padding-top: var(--btn-padding-top);
     padding-bottom: var(--btn-padding-bottom);
     border-radius: 0.9rem;
+    padding-left: var(--padding-left);
     display: flex;
     /*background-color: green;*/
 }
