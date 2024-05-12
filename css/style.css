@@ -16,6 +16,11 @@
     --content-header-size : 14px;
     --padding-left :20px ;
     --btn-padding-left : 1rem ;
+    --hover-btn-bg-color : rgb(226, 229, 230);
+    --hover-btn-display : flex;
+    --hover-btn-padding : 10px ;
+    --hover-btn-border-raduis : 50%;
+    
 }
 
 /* my property */
@@ -38,12 +43,22 @@ body{
 }
 .header__topbar{
     display: flex;
-    gap: 25px;
+    gap: 5px;
 }
 .topbar__logo{
     display: flex;
-    gap: 25px;
+    gap: 5px;
     align-items: center;
+}
+.logo__humberger,.contacts__icone--hover{
+    display: var(--hover-btn-display);
+    padding: var(--hover-btn-padding);
+    border-radius: var(--hover-btn-border-raduis);
+}
+.logo__humberger:hover{
+    cursor: pointer;
+    background-color: var(--hover-btn-bg-color);
+    transition: background-color 1s ease-in-out;
 }
 .humberger__img--size{
     width: 24px;
@@ -78,44 +93,74 @@ body{
     height: auto;
     justify-content: left;
     align-items: center;
-    margin-left: 70px;
+    margin-left: 75px;
     align-items: center;
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-left: 15px;
     /*gap: 20px;*/
     border-radius: 5px;
+    /* background-color: red; */
 }
 .contacts__icone{
     display: flex;
     align-items: center;
     padding-left: 20px;
 }
+.contacts__icone--hover{
+    display: var(--hover-btn-display);
+    padding: var(--hover-btn-padding);
+    border-radius: var(--hover-btn-border-raduis);
+}
+.contacts__icone--hover:hover{
+    cursor: pointer;
+    background-color: var(--hover-btn-bg-color);
+    transition: background-color 1s ease-in-out;
+}
 .contacts__search{
     width: 100%;
 }
-.search__input{
+.contacts__search--box-shadow{
+    background-color: white;
+    box-shadow:0px 0px 20px var(--hover-btn-bg-color);
+    /* transition:background-color 1s ease-in-out, box-shadow 1s ease-in-out; */
+}
+p{
     padding: 12px;
     width: 90%;
     border:  none;
-    background-color: var(--hover-links-color);
+    /* background-color: var(--hover-links-color); */
     font-size: 1rem;
+}
+.search__input{
+    width: 95%;
+    border: none;
+    padding-top:10px ;
+    padding-bottom: 10px;
+    font-size: var(--font-size-paragraphe);
+    background-color: var(--hover-links-color);
+    margin-left: 0.5rem;
 }
 .search__input:focus{
     outline: none; /* Supprime la bordure de focus */
 }
 /* Hand page design */
 .main{
-    width: 90%;
+    width: 95%;
     padding-left: 2.5%;
     display: flex;
     padding-top: 20px;
+    /* background-color: red; */
 }
 .main__menu{
     width: 25%;
 }
+.main__menu--width{
+    display: none;
+}
 .menu__add-contact{
     /*gap: 15px;*/
-    background-color: var(--button-color);
+    /* background-color: var(--button-color); */
     width: 50%;
     /*padding-top: var(--btn-padding-top);*/
     /*padding-bottom: var(--btn-padding-bottom);*/
@@ -154,6 +199,10 @@ body{
     padding-right: 20px;
     border-radius: 30px;
     height: 80vh;
+    /* transition: width 0.8s ease; */
+}
+.main__content--width{
+    width: 100%;
 }
 .add-contact__button{
     display: flex;
@@ -168,6 +217,13 @@ body{
     border-radius:1.5rem;
     font-size: var(--font-size-paragraphe);
     padding-left: var(--btn-padding-bottom);
+    padding-right: 25px;
+}
+.add-contact__button--hover:hover{
+    box-shadow: 0px 2px 8px var(--color-text);
+    cursor: pointer;
+    transition: box-shadow 0.4s ease-in-out;
+    /* background-color: red; */
 }
 .add-contact__button--bg-color{
     background-color: var(--button-color);
@@ -237,10 +293,10 @@ body{
     width: 20%;
     /*background-color: yellow;*/
 }
-.content-img {
+.content__img {
     /* width: 100%; /* Largeur du conteneur */
     /* height: 200px;*/
-    /*background-color: red;*/ 
+    /* background-color: red;  */
     /* text-align: center;  */
     display: flex;
     justify-content: center; /* Pour centrer horizontalement */
@@ -249,10 +305,21 @@ body{
     flex-direction: column;
   }
 
-.img-width{
-    width: 17%;
+.img__width{
+    width: 20%;
     height: auto;
 }
 .img-description{
     text-align: center;
 }
+
+
+
+
+@media screen and (max-width : 1366px) {
+    .menu__add-contact{
+        width: 65%;
+    }
+}
+
+

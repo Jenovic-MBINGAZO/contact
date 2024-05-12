@@ -18,9 +18,9 @@
             <div class="topbar__logo">
 
                 <div class="logo__humberger">
-                    <a href="#" title="Menu principal" class="links--decoration logo__humberger--hover">
-                        <img src="img/logo/humberger.png" alt="" class="humberger__img--size">
-                    </a>
+                    
+                    <img src="img/logo/humberger.png" alt="" class="humberger__img--size" id="humberger">
+
                 </div>
 
                 <div class="logo__link">
@@ -40,63 +40,37 @@
         </div>
 
         <div class="header__search">
-            <div class="search__contacts">
-                <div class="contacts__icone">
+            <div class="search__contacts" id="search__contacts__boloc">
+                <div class="contacts__icone contacts__icone--hover">
                     <a href="#" title="Recherche" class="icone__link">
                         <img src="img/logo/search.png" alt="Recherche" class="icone__link--size">
                     </a>
                 </div>
-                <div class="contacts__search">
-                    <input type="text"  class="search__input" placeholder="Recherche">
+                <div class="contacts__search " id="contacts__search">
+                    <input type="text"  class="search__input" placeholder="Recherche" id="search">
                 </div>
             </div>
         </div>
     </header>
     <main class="main" id="main">
-        <div class="main__menu">
+        <div class="main__menu" id="main__menu">
+
             <div class="menu__add-contact menu__add-contact--center menu__add-contact--padding-y">
-               <button class="add-contact__button add-contact__button--bg-color" id="btn">
+               <button class="add-contact__button add-contact__button--bg-color add-contact__button--hover" id="btnCreateContacts">
                     <img src="img/logo/add.png" alt="Ajout contact" class="link__img">
                     <div class="add-contact__text">
                         Créer un contact
                     </div>
                </button>
             </div>
-            <!-- <div class="menu__add-contact menu__add-contact--padding-x menu__add-contact--width">             
-                <a href="" class="add-contact__button icone__link  add-contact__button--witdh">
-                    <img src="img/logo/user.png" alt="Ajout contact" class="link__img link__img--size">
-                    <div class="add-contact__text add-contact__text--fw">
-                       Contact
-                    </div>
-                    <div class="add-contact__compteur">0</div>
-               </a>
-            </div>
-            <div class="menu__add-contact menu__add-contact--bg-color menu__add-contact--padding-x menu__add-contact--width">
-                <a href="" class="add-contact__button icone__link">
-                    <img src="img/logo/contact-frequent.png" alt="Ajout contact" class="link__img link__img--size">
-                    <div class="add-contact__text">
-                       Fréquents
-                    </div>
-               </a>
-            </div>
-            <div class="menu__add-contact menu__add-contact--bg-color menu__add-contact--padding-x menu__add-contact--width">
-               
-                <div class="add-contact__text  add-contact__text--fw">
-                    Libellés
-                </div>
-                <div class="add-contact__libele add-contact__text--fw">
-                    <a href="" class="add-contact__button icone__link ">
-                        <img src="img/logo/add.png" alt="Ajout contact" class="link__img link__img--size link__img--padding-y">
-                   </a>
-                </div>
-            </div> -->
+            
         </div>
         <div class="main__content" id="mainContent">
-            <p class="content--title" id="compteur">
+            <p class="content--title" id="checkContactsExist">
                 Contacts (0)
             </p>
            
-            <div id="content__header" class="content__header content__header--size">
+            <div id="mainContactsNoExist" class="content__header content__header--size">
                 <div class="header__name header__name--padding-x">
                     Nom
                 </div>
@@ -115,15 +89,7 @@
             
             </div>
             <hr id="hr">
-            
-           
- <!--
-             <div class="content-img">
-                <img src="https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell1.png" alt="" class="img-width" id=imgInfo">
-                <p class="img-description">"
-                    Aucun contact pour l'instant
-                </p>
-             </div>  -->
+        
         </div>
     </main>
     <script src="index.js"></script>
