@@ -32,6 +32,7 @@ const checkContactsExist = manageDomValues("checkContactsExist");
 const mainContactsNoExist = manageDomValues("mainContactsNoExist");
 const btnCreateContacts = manageDomValues("btnCreateContacts");
 const hr = manageDomValues("hr");
+const mainContent = manageDomValues("mainContent");
 // console.log(checkContactsExist);
 
 //menu humberger
@@ -85,6 +86,7 @@ p.textContent = "Aucun contact pour l'instant.";
 
 
 if (deleteSpacecheckContactsExist === "Contacts (0)") {
+
     mainContactsNoExist.remove();
     hr.remove();
     main__content.append(div);
@@ -94,9 +96,61 @@ if (deleteSpacecheckContactsExist === "Contacts (0)") {
     },3000);
     div.append(p);
 }
+/*  Added functionality to add contacts */
+const content__img = manageDomValues("content__img");
+const divv = document.createElement("div");
+divv.className = "content__add-contact";
+const divvv = document.createElement("div");
+divvv.className = "content__div-vide";
+const divNavigation = document.createElement("div");
+divNavigation.className = "add-contact__navigation"; 
+const btnNavition = document.createElement("button");
+btnNavition.textContent ="Enregistrer";
+btnNavition.disabled = true;
+btnNavition.className = "navigation__btn";
+btnNavition.id = "enregistrer";
+const backTouch = document.createElement("img");
+backTouch.alt = "Retour";
+backTouch.src = "img/logo/retour.png";
+backTouch.className = "navigation__img-back-touch";
+const divPicture = document.createElement("div");
+divPicture.className = "add-contact__picture";
+const pictureImg = document.createElement("img");
+pictureImg.alt = "";
+pictureImg.src = "img/logo/addPicturee.png";
+pictureImg.className = "picture__width";
+const divAdd = document.createElement("div");
+divAdd.className = "add-contact__bloc";
+const divForm = document.createElement("div");
+divForm.className = "add-contact__form";
+const btnLibelle = document.createElement("button");
+btnLibelle.className = "form__btn";
+btnLibelle.textContent = "Libellé"
+const spanLibelle = document.createElement("span");
+spanLibelle.textContent = "+";
+spanLibelle.className = "btn__span-libelle";
+// imgBtnLibelle.atl = "";
+// imgBtnLibelle.src =  "img/logo/add.png";
+// imgBtnLibelle.className = "btn__libelle";
 
 
 
+btnCreateContacts.addEventListener("click",function(){
+    checkContactsExist.remove();
+    content__img.remove();
+    main__content.append(divv);
+    main__content.append(divvv);
+    divv.append(divNavigation);
+    divNavigation.append(backTouch);
+    divNavigation.append(btnNavition);
+    divv.append(divPicture);
+    divPicture.append(pictureImg);
+    divPicture.append(divAdd);
+    divv.append(divForm);
+    divForm.append(btnLibelle);
+    btnLibelle.append(spanLibelle);
+}
+);
 
 
 
