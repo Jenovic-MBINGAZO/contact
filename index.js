@@ -33,7 +33,7 @@ const mainContactsNoExist = manageDomValues("mainContactsNoExist");
 const btnCreateContacts = manageDomValues("btnCreateContacts");
 const hr = manageDomValues("hr");
 const mainContent = manageDomValues("mainContent");
-// console.log(checkContactsExist);
+const contact__buttonn = manageDomValues("contact__button"); 
 
 //menu humberger
 const humberger = manageDomValues("humberger") ;
@@ -49,6 +49,13 @@ search.addEventListener("click",function(){
    //console.log(search);
 }
 );
+document.addEventListener("click",function(evt){
+    if (evt.target != search) {
+        search__contacts__boloc.classList.remove("contacts__search--box-shadow");
+        search.style.backgroundColor = "";
+    }
+}
+);
 
 //event of btn humberger
 let isMenuOpen = false;
@@ -61,7 +68,7 @@ humberger.addEventListener("click",function(){
    }
    else{
         main__menu.classList.remove("main__menu--width");
-        main__content.style.width = ""; // Reset width
+        main__content.style.width = ""; 
         isMenuOpen = false;
    }
 }
@@ -126,6 +133,7 @@ divForm.className = "add-contact__form";
 const btnLibelle = document.createElement("button");
 btnLibelle.className = "form__btn";
 btnLibelle.textContent = "Libellé"
+btnLibelle.title = "Gerer les libellés";
 const spanLibelle = document.createElement("span");
 spanLibelle.textContent = "+";
 spanLibelle.className = "btn__span-libelle";
@@ -135,9 +143,12 @@ const divInputName = document.createElement("div");
 divInputName.className = "input__name";
 const divInputPrenom = document.createElement("div");
 divInputPrenom.className = "input__prenom";
+
 const inputPrenom = document.createElement("input");
 inputPrenom.type = "text";
 inputPrenom.className = "prenom__input";
+inputPrenom.id = "prenom__input";
+
 inputPrenom.placeholder = "Prénom";
 const inputNom = document.createElement("input");
 inputNom.type = "text";
@@ -168,8 +179,11 @@ inputMail.placeholder = "E-mail";
 inputMail.className = "div__input";
 
 const inputAddMail = document.createElement("button");
-inputAddMail.textContent = "Ajouter une adresse e-mail";
 const spanMail = document.createElement("span");
+spanMail.textContent = "+";
+const spanMailText = document.createElement("span");
+spanMailText.textContent = "Ajouter une adresse e-mail";
+inputAddMail.className = "mail__button";
 // spanMail.className = ""
 // spanMail.textContent = "+";
 // inputAddMail.className = "input__button";
@@ -204,6 +218,7 @@ btnCreateContacts.addEventListener("click",function(){
     content__img.remove();
     main__content.append(divv);
     main__content.append(divvv);
+    mainContent.classList.add("main__content--overflow");
 
     divv.append(divNavigation);
     divNavigation.append(backTouch);
@@ -230,12 +245,150 @@ btnCreateContacts.addEventListener("click",function(){
     divMail.append(sectionMail);
     sectionMail.append(inputMail);
     divMail.append(inputAddMail);
+    inputAddMail.append(spanMail);
+    inputAddMail.append(spanMailText);
     // divInputEntreprise.append(inputEntreprise);
     
 }
 );
 
+/* change color border input if click */
+inputPrenom.addEventListener("click",function(evt){
+    inputPrenom.classList.add("prenom__input--border-color");
+}
+);
+document.addEventListener("click",function(evt){
+    if (evt.target != inputPrenom) {
+        inputPrenom.classList.remove("prenom__input--border-color");
+    } 
+}
+);
 
+inputNom.addEventListener("click",function(evt){
+    inputNom.classList.add("input__nom--border-color");
+}
+);
+document.addEventListener("click",function(evt){
+    if (evt.target != inputNom) {
+        inputPrenom.classList.remove("input__nom--border-color");
+    } 
+}
+);
+
+inputEntreprise.addEventListener("click",function(evt){
+    inputEntreprise.classList.add("entreprise__input--border-color");
+}
+);
+document.addEventListener("click",function(evt){
+    if (evt.target != inputEntreprise) {
+        inputEntreprise.classList.remove("entreprise__input--border-color");
+    } 
+}
+);
+
+inputFonction.addEventListener("click",function(evt){
+    inputFonction.classList.add("div__function--border-color");
+}
+);
+document.addEventListener("click",function(evt){
+    if (evt.target != inputFonction) {
+        inputFonction.classList.remove("div__function--border-color");
+    } 
+}
+);
+
+inputMail.addEventListener("click",function(evt){
+    inputMail.classList.add("mail__button--border-color");
+}
+);
+document.addEventListener("click",function(evt){
+    if (evt.target != inputMail) {
+        inputMail.classList.remove("mail__button--border-color");
+    } 
+}
+);
+
+/* keyboard click management evenement */
+inputPrenom.addEventListener("keydown",function(evt){
+    if (inputPrenom.value.trim() !== "") {
+        btnNavition.disabled = false;
+        btnNavition.style.backgroundColor = "#1E64D4";
+        btnNavition.style.color = "white";
+        btnNavition.style.fontWeight = "bold";
+        btnNavition.style.cursor = "pointer";
+    } else {
+        btnNavition.disabled = true;
+        btnNavition.style.backgroundColor = "";
+        btnNavition.style.color = ""; // 
+        btnNavition.style.fontWeight = "";
+        btnNavition.style.cursor = "pointer";
+    }
+}
+);
+
+inputNom.addEventListener("keydown",function(evt){
+    if (inputNom.value.trim() !== "") {
+        btnNavition.disabled = false;
+        btnNavition.style.backgroundColor = "#1E64D4";
+        btnNavition.style.color = "white";
+        btnNavition.style.fontWeight = "bold";
+        btnNavition.style.cursor = "pointer";
+    } else {
+        btnNavition.disabled = true;
+        btnNavition.style.backgroundColor = "";
+        btnNavition.style.color = ""; // 
+        btnNavition.style.fontWeight = "";
+    }
+}
+);
+
+inputEntreprise.addEventListener("keydown",function(evt){
+    if (inputEntreprise.value.trim() !== "") {
+        btnNavition.disabled = false;
+        btnNavition.style.backgroundColor = "#1E64D4";
+        btnNavition.style.color = "white";
+        btnNavition.style.fontWeight = "bold";
+        btnNavition.style.cursor = "pointer";
+    } else {
+        btnNavition.disabled = true;
+        btnNavition.style.backgroundColor = "";
+        btnNavition.style.color = ""; // 
+        btnNavition.style.fontWeight = "";
+    }
+}
+);
+
+inputFonction.addEventListener("keydown",function(evt){
+    if (inputFonction.value.trim() !== "") {
+        btnNavition.disabled = false;
+        btnNavition.style.backgroundColor = "#1E64D4";
+        btnNavition.style.color = "white";
+        btnNavition.style.fontWeight = "bold";
+        btnNavition.style.cursor = "pointer";
+    } else {
+        btnNavition.disabled = true;
+        btnNavition.style.backgroundColor = "";
+        btnNavition.style.color = ""; // 
+        btnNavition.style.fontWeight = "";
+    }
+}
+);
+
+inputMail.addEventListener("keydown",function(evt){
+    if (inputMail.value.trim() !== "") {
+        btnNavition.disabled = false;
+        btnNavition.style.backgroundColor = "#1E64D4";
+        btnNavition.style.color = "white";
+        btnNavition.style.fontWeight = "bold";
+        btnNavition.style.cursor = "pointer";
+    } else {
+        btnNavition.disabled = true;
+        btnNavition.style.backgroundColor = "";
+        btnNavition.style.color = ""; // 
+        btnNavition.style.fontWeight = "";
+    }
+}
+);
 
 
 
