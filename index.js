@@ -129,6 +129,70 @@ btnLibelle.textContent = "Libellé"
 const spanLibelle = document.createElement("span");
 spanLibelle.textContent = "+";
 spanLibelle.className = "btn__span-libelle";
+const divInput = document.createElement("div");
+divInput.className = "form__input";
+const divInputName = document.createElement("div");
+divInputName.className = "input__name";
+const divInputPrenom = document.createElement("div");
+divInputPrenom.className = "input__prenom";
+const inputPrenom = document.createElement("input");
+inputPrenom.type = "text";
+inputPrenom.className = "prenom__input";
+inputPrenom.placeholder = "Prénom";
+const inputNom = document.createElement("input");
+inputNom.type = "text";
+inputNom.className = "input__nom";
+inputNom.placeholder = "Nom";
+
+const divInputEntreprise = document.createElement("div");
+divInputEntreprise.className = "form__entreprise";
+const sectionEntreprise = document.createElement("div");
+sectionEntreprise.className = "entreprise__div";
+const divEntreprise = document.createElement("div");
+divEntreprise.className = "entreprise__div";
+const inputEntreprise = document.createElement("input");
+inputEntreprise.type = "text";
+inputEntreprise.className = "entreprise__input";
+inputEntreprise.placeholder = "Entreprise";
+const inputFonction = document.createElement("input");
+inputFonction.className = "div__function";
+inputFonction.placeholder = "Fonction";
+
+
+const divMail = document.createElement("div");
+divMail.className = "form__mail";
+const sectionMail = document.createElement("div");
+sectionMail.className = "mail__div";
+const inputMail = document.createElement("input");
+inputMail.placeholder = "E-mail";
+inputMail.className = "div__input";
+
+const inputAddMail = document.createElement("button");
+inputAddMail.textContent = "Ajouter une adresse e-mail";
+const spanMail = document.createElement("span");
+// spanMail.className = ""
+// spanMail.textContent = "+";
+// inputAddMail.className = "input__button";
+
+
+// const divMail = document.createElement("div");
+// divMail.className = "mail__div";
+// const inputEntreprise = document.createElement("input");
+// inputEntreprise.type = "text";
+// inputEntreprise.className = "entreprise__input";
+// inputEntreprise.placeholder = "Entreprise";
+// const inputFonction = document.createElement("input");
+// inputFonction.className = "div__function";
+// inputFonction.placeholder = "Fonction";
+
+// inputEntreprise.type = "text";
+// const inputFonction = document.createElement("input");
+// inputFonction.type = "text";
+// const inputEmail = document.createElement("input");
+// inputEmail.type = "email";
+// const inputButton = document.createElement("button");
+// inputButton.textContent = "+ Ajouter une adresse e-mail";
+
 // imgBtnLibelle.atl = "";
 // imgBtnLibelle.src =  "img/logo/add.png";
 // imgBtnLibelle.className = "btn__libelle";
@@ -140,6 +204,7 @@ btnCreateContacts.addEventListener("click",function(){
     content__img.remove();
     main__content.append(divv);
     main__content.append(divvv);
+
     divv.append(divNavigation);
     divNavigation.append(backTouch);
     divNavigation.append(btnNavition);
@@ -147,8 +212,26 @@ btnCreateContacts.addEventListener("click",function(){
     divPicture.append(pictureImg);
     divPicture.append(divAdd);
     divv.append(divForm);
+
     divForm.append(btnLibelle);
     btnLibelle.append(spanLibelle);
+
+    divForm.append(divInput);
+    divInput.append(divInputPrenom);
+    divInputPrenom.append(inputPrenom);
+    divInput.append(inputNom);
+
+    divForm.append(divInputEntreprise);
+    divInputEntreprise.append(sectionEntreprise);
+    sectionEntreprise.append(inputEntreprise);
+    divInputEntreprise.append(inputFonction);
+
+    divForm.append(divMail);
+    divMail.append(sectionMail);
+    sectionMail.append(inputMail);
+    divMail.append(inputAddMail);
+    // divInputEntreprise.append(inputEntreprise);
+    
 }
 );
 

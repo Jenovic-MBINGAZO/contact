@@ -22,6 +22,11 @@
     --hover-btn-border-raduis : 50%;
     --btn-send-bg-color : #1E64D4;
     --border-form-libelle : 0.1rem solid var(--hover-btn-bg-color);
+    --border-raduis-form-input : 0.5rem;
+    --font-zize-form-input : 1rem;
+    --padding-fomr-input : 0.6rem 16rem 0.6rem 0.5rem;
+    --box-shadow : 0px 2px 8px var(--color-text);
+    --transitionButton : box-shadow 0.4s ease-in-out;
     
 }
 
@@ -269,6 +274,7 @@ p{
     /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
+    z-index: 10;
 }
 /* .add-contact__picture{
     background-color: red;
@@ -316,6 +322,56 @@ p{
 .btn__span-libelle{
     color: #1E64D4;
     font-size: 1.3rem;
+}
+.prenom__input{
+    padding: var(--padding-fomr-input); 
+    font-size: var(--font-zize-form-input);
+    border-radius: var(--border-raduis-form-input);
+    border: var(--border-form-libelle);
+}
+.input__nom{
+    padding: var(--padding-fomr-input); 
+    font-size: var(--font-zize-form-input);
+    border-radius: var(--border-raduis-form-input);
+    border: var(--border-form-libelle);
+}
+.div__input{
+    
+    padding: var(--padding-fomr-input); 
+    font-size: var(--font-zize-form-input);
+    border-radius: var(--border-raduis-form-input);
+    border: var(--border-form-libelle);
+}
+.input__button{
+    --padding-fomr-input : 0.6rem 14rem 0.6rem 0.5rem;
+    --border-raduis-form-input : 5rem;
+    padding: var(--padding-fomr-input); 
+    font-size: var(--font-zize-form-input);
+    border-radius: var(--border-raduis-form-input);
+    border: var(--border-form-libelle);
+    background-color: var(--hover-links-color);
+    cursor: pointer;
+    color: var(--btn-send-bg-color);
+    text-align: center;
+}
+.input__button:hover{
+    background-color: #E7F0FE;
+    box-shadow:  var(--box-shadow);
+    color: var(--btn-send-bg-color);
+    border-color: var(--hover-links-color);
+    transition:var(--transitionButton) ;
+}
+.div__function{
+    padding: var(--padding-fomr-input); 
+    font-size: var(--font-zize-form-input);
+    border-radius: var(--border-raduis-form-input);
+    border: var(--border-form-libelle);
+}
+.entreprise__input{
+    padding: var(--padding-fomr-input); 
+    font-size: var(--font-zize-form-input);
+    border-radius: var(--border-raduis-form-input);
+    border: var(--border-form-libelle);
 }
 .link__img--size{
     width: 24px;
