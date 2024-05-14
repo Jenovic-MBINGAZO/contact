@@ -93,16 +93,39 @@ p.textContent = "Aucun contact pour l'instant.";
 
 
 if (deleteSpacecheckContactsExist === "Contacts (0)") {
-
-    mainContactsNoExist.remove();
-    hr.remove();
-    main__content.append(div);
-    div.append(divImg);
-    setTimeout(function(){
-        divImg.src = "https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell3.png";
-    },3000);
-    div.append(p);
+        mainContactsNoExist.remove();
+        hr.remove();
+        main__content.append(div);
+        div.append(divImg);
+        setTimeout(function(){
+            divImg.src = "https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell3.png";
+        },3000);
+        div.append(p);
 }
+
+// /* Button contact */
+// const main__contentClass = document.querySelector(".main__content");
+// contact__buttonn.addEventListener("click",function(evt){
+//     const main__contentClass = document.querySelector(".content__add-contact");
+//     // console.log(main__contentClass);
+//     if (main__contentClass) {
+//         // mainContactsNoExist.remove();
+//         // hr.remove();
+//         // main__content.append(div);
+//         // div.append(divImg);
+//         // setTimeout(function(){
+//         //     divImg.src = "https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell3.png";
+//         // },3000);
+//         // div.append(p);
+//         console.log((main__contentClass));
+//     }
+//     // alert("Bonjour");  
+    
+// });
+
+
+
+
 /*  Added functionality to add contacts */
 const content__img = manageDomValues("content__img");
 const divv = document.createElement("div");
@@ -148,8 +171,14 @@ const inputPrenom = document.createElement("input");
 inputPrenom.type = "text";
 inputPrenom.className = "prenom__input";
 inputPrenom.id = "prenom__input";
-
 inputPrenom.placeholder = "Prénom";
+
+const inputIconePrenom = document.createElement("img");
+inputIconePrenom.className = "prenom__icone-prenom";
+inputIconePrenom.alt = "Titre";
+inputIconePrenom.src = "img/logo/person.PNG";
+
+
 const inputNom = document.createElement("input");
 inputNom.type = "text";
 inputNom.className = "input__nom";
@@ -184,6 +213,15 @@ spanMail.textContent = "+";
 const spanMailText = document.createElement("span");
 spanMailText.textContent = "Ajouter une adresse e-mail";
 inputAddMail.className = "mail__button";
+
+const divTelInput = document.createElement("div");
+divTelInput.className = "form__tel-input";
+const inputTel = document.createElement("input");
+inputTel.type = "tel";
+inputTel.className = "input__tel";
+inputTel.id = "phone";
+inputTel.value = "+243";
+inputTel.placeholder = "Téléphone";
 // spanMail.className = ""
 // spanMail.textContent = "+";
 // inputAddMail.className = "input__button";
@@ -234,6 +272,7 @@ btnCreateContacts.addEventListener("click",function(){
     divForm.append(divInput);
     divInput.append(divInputPrenom);
     divInputPrenom.append(inputPrenom);
+    // divInput.append(inputIconePrenom);
     divInput.append(inputNom);
 
     divForm.append(divInputEntreprise);
@@ -247,6 +286,10 @@ btnCreateContacts.addEventListener("click",function(){
     divMail.append(inputAddMail);
     inputAddMail.append(spanMail);
     inputAddMail.append(spanMailText);
+
+    divForm.append(divTelInput);
+    divTelInput.append(inputTel);
+    // console.log("bonjour")
     // divInputEntreprise.append(inputEntreprise);
     
 }
@@ -304,6 +347,17 @@ inputMail.addEventListener("click",function(evt){
 document.addEventListener("click",function(evt){
     if (evt.target != inputMail) {
         inputMail.classList.remove("mail__button--border-color");
+    } 
+}
+);
+
+inputTel.addEventListener("click",function(evt){
+    inputTel.classList.add("mail__button--border-color");
+}
+);
+document.addEventListener("click",function(evt){
+    if (evt.target != inputTel) {
+        inputTel.classList.remove("mail__button--border-color");
     } 
 }
 );
@@ -390,7 +444,21 @@ inputMail.addEventListener("keydown",function(evt){
 }
 );
 
-
+inputTel.addEventListener("keydown",function(evt){
+    if (inputTel.value.trim() !== "") {
+        btnNavition.disabled = false;
+        btnNavition.style.backgroundColor = "#1E64D4";
+        btnNavition.style.color = "white";
+        btnNavition.style.fontWeight = "bold";
+        btnNavition.style.cursor = "pointer";
+    } else {
+        btnNavition.disabled = true;
+        btnNavition.style.backgroundColor = "";
+        btnNavition.style.color = ""; // 
+        btnNavition.style.fontWeight = "";
+    }
+}
+);
 
 
 

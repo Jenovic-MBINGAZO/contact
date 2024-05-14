@@ -201,9 +201,10 @@ p{
     padding-right: 20px;
     border-radius: 30px;
     /* height: 80vh; */
-    height: 470px;
+    height: 850px;
     /* overflow-y: scroll; */
     padding-bottom: 1rem;
+    /* position: relative; */
   
     /* transition: width 0.8s ease; */
 }
@@ -285,12 +286,18 @@ p{
 }
 .add-contact__navigation{
     width: 40%;
-    position: fixed;
+    /* position: fixed; */
+    /* position: fixed;
+    top: 0;
+    left: 0; Vous pouvez ajuster cette valeur si nécessaire */
+    z-index: 1;
     background-color: white;
     display: flex;
     justify-content: space-between;
     padding-top: 2rem;
-    z-index: 10;
+    /* z-index: 10; */
+    /* background-color: yellow; */
+    width: 80%;
 }
 
 /* .add-contact__picture{
@@ -392,6 +399,11 @@ p{
     flex-direction: column;
     gap: var(--gap-form-input);
 }
+.form__tel-input{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-form-input);
+}
 .btn__span-libelle{
     color: #1E64D4;
     font-size: 1.3rem;
@@ -412,6 +424,13 @@ p{
 }
 .div__input{
     
+    padding: var(--padding-fomr-input); 
+    font-size: var(--font-zize-form-input);
+    border-radius: var(--border-raduis-form-input);
+    width: var(--input-width);
+    border: 0.1rem solid  var(--input-color-gris);
+}
+.input__tel{
     padding: var(--padding-fomr-input); 
     font-size: var(--font-zize-form-input);
     border-radius: var(--border-raduis-form-input);
@@ -551,6 +570,10 @@ p{
     .menu__add-contact{
         width: 70%;
         /* background-color: red; */
+    }
+
+    .main__content{
+        height: 540px ;
     }
 }
 
