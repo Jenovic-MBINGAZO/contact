@@ -473,6 +473,7 @@ p{
     border-color: var(--hover-links-color);
     transition:var(--transitionButton) ;
 }
+
 .prenom__input--border-color:focus{
    outline-color: var(--outline-color);
    border-width: var(--border-width);
@@ -573,7 +574,7 @@ p{
     }
 
     .main__content{
-        height: 540px ;
+        height: 500px ;
     }
 }
 

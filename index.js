@@ -222,6 +222,7 @@ inputTel.className = "input__tel";
 inputTel.id = "phone";
 inputTel.value = "+243";
 inputTel.placeholder = "Téléphone";
+
 // spanMail.className = ""
 // spanMail.textContent = "+";
 // inputAddMail.className = "input__button";
