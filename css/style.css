@@ -194,7 +194,7 @@ p{
     color: black;
     font-size: var(--font-size-paragraphe);
 }
-.main__content{
+.main__content-contact{
     width: 80%;
     background-color: rgb(255,255,255);
     padding-left: 20px;
@@ -205,8 +205,33 @@ p{
     /* overflow-y: scroll; */
     padding-bottom: 1rem;
     /* position: relative; */
+    display: none;
   
     /* transition: width 0.8s ease; */
+}
+.main__content-empty-contact{
+    width: 80%;
+    background-color: rgb(255,255,255);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    /* height: 80vh; */
+    height: 850px;
+    /* overflow-y: scroll; */
+    padding-bottom: 1rem;
+    display: none;
+}
+.main__content-contact-add{
+    width: 80%;
+    background-color: rgb(255,255,255);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    /* height: 80vh; */
+    height: 850px;
+    /* overflow-y: scroll; */
+    padding-bottom: 1rem;
+    display: none;
 }
 .main__content--overflow{
     overflow-y: scroll; 
@@ -437,6 +462,23 @@ p{
     width: var(--input-width);
     border: 0.1rem solid  var(--input-color-gris);
 }
+
+/* property for input phon */
+.content__input{
+    display: block;
+    width: 90%;
+    /* background-color: yellow; */
+}
+.content__input--size{
+    /* background-color: red; */
+    width: 100%;
+}
+.iti, .iti--allow-dropdown{
+    width: 100%;
+}
+/* .input__tel--display , .iti__flag , .iti__cd ,.iti__arrow{
+    display: none;
+} */
 .div__function{
     padding: var(--padding-fomr-input); 
     font-size: var(--font-zize-form-input);

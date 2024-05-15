@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./build/css/demo.css">
+    <!-- <link rel="stylesheet" href="./build/css/demo.css"> -->
     <link rel="stylesheet" href="./build/css/intlTelInput.css">
     
     <link rel="stylesheet" href="css/style.css">
@@ -76,9 +76,21 @@
                 </button>
             </div>
         </div>
-        <div class="main__content" id="mainContent">
+        <div class="main__content-contact" id="mainContent">
             <p class="content--title" id="checkContactsExist">
                 Contacts (0)
+            </p>
+        
+            <div class="content__img" id="content__img">
+                <img src="https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell1.png" class="img__content img__width" alt="Aucun contact" id="img">
+                <p class="img-description">
+                    Aucun contact pour l'instant.
+                </p>
+            </div>
+        </div>
+        <div class="main__content-empty-contact" id="mainContentExiste">
+            <p class="content--title" id="checkContactsExist">
+                Contacts (11)
             </p>
         
             <div id="mainContactsNoExist" class="content__header content__header--size">
@@ -101,20 +113,26 @@
             </div>
             <hr id="hr">
             
-        
+           <!-- <div class="content__input" id="content__input">
+                <input type="tel" placeholder="Téléphone" value="+243" id="phone" class="input__tel input__tel--display content__input content__input--size" >
+           </div> -->
         </div>
+
+        <div class="main__content-contact-add" id="mainContentContactAdd">
+            
+        </div>
+
+
     </main>
-    <form action="">
-        <input type="tel" id="phone" placeholder="phone number" value="+243">
-        <button typre ="submit">Submit</button>
+<!-- 
+        <input type="tel" id="phone" placeholder="phone number" value="+243"> -->
+    
     </form>
-    </form>
-    <!-- <input type="tel" placeholder="Téléphone" value="+243" id="phone" class="input__tel" > -->
     <script src="index.js"></script>
-    <script src="./build/js/intlTelInput.js"></script>
-    <script>
+    <!-- <script src="./build/js/intlTelInput.js"></script> -->
+    <!-- <script>
         let input = document.querySelector("#phone");
         window.intlTelInput(input,{})
-    </script>
+    </script> -->
 </body>
 </html>
