@@ -74,16 +74,20 @@ const divv = document.createElement("div");
 divv.className = "content__add-contact";
 const divvv = document.createElement("div");
 divvv.className = "content__div-vide";
-const divNavigation = document.createElement("div");
-divNavigation.className = "add-contact__navigation"; 
-const btnNavition = document.createElement("button");
-btnNavition.textContent ="Enregistrer";
+
+// const divNavigation = document.createElement("div");
+// divNavigation.className = "add-contact__navigation"; 
+// const btnNavition = document.createElement("button");
+// btnNavition.textContent ="Enregistrer";
+
 btnNavition.disabled = true;
+
 btnNavition.className = "navigation__btn";
 btnNavition.id = "enregistrer";
 const backTouch = document.createElement("img");
 backTouch.alt = "Retour";
 backTouch.src = "img/logo/retour.png";
+
 backTouch.className = "navigation__img-back-touch";
 const divPicture = document.createElement("div");
 divPicture.className = "add-contact__picture";

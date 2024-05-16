@@ -11,7 +11,7 @@
     --btn-padding-top: 15px;
     --btn-padding-bottom: 15px;
     --btn-border-raduis : 2rem;
-    --btn-gap : 13px;
+    --btn-gap : 8px;
     --header-padding--rigth :100px;
     --content-header-size : 14px;
     --padding-left :20px ;
@@ -30,7 +30,7 @@
     --outline-color :var(--btn-send-bg-color);
     --border-width : 0.2rem;
     --boder-color : var(--btn-send-bg-color);
-    --input-width : 90% ;
+    --input-width : 80% ;
     --gap-form-input : 0.8rem;
     --input-color-gris : #747775;
  }
@@ -224,12 +224,12 @@ p{
 .main__content-contact-add{
     width: 80%;
     background-color: rgb(255,255,255);
-    padding-left: 20px;
-    padding-right: 20px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
     border-radius: 30px;
     /* height: 80vh; */
     height: 850px;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     padding-bottom: 1rem;
     display: none;
 }
@@ -309,20 +309,30 @@ p{
     /* overflow-y: scroll; */
     gap: 1.5rem;
 }
-.add-contact__navigation{
-    width: 40%;
+.content-contact-add__header{
     /* position: fixed; */
     /* position: fixed;
     top: 0;
     left: 0; Vous pouvez ajuster cette valeur si nécessaire */
-    z-index: 1;
-    background-color: white;
+    /* z-index: 1; */
+    /* background-color: red; */
     display: flex;
     justify-content: space-between;
     padding-top: 2rem;
     /* z-index: 10; */
     /* background-color: yellow; */
-    width: 80%;
+    width: 65%;
+    padding-left: 40px;
+}
+.header__return{
+    display: var(--hover-btn-display);
+    padding: var(--hover-btn-padding);
+    border-radius: var(--hover-btn-border-raduis);
+}
+.header__return:hover{
+    cursor: pointer;
+    background-color: var(--hover-btn-bg-color);
+    transition: background-color 1s ease-in-out;
 }
 
 /* .add-contact__picture{
@@ -373,48 +383,60 @@ p{
     display: flex;
     justify-content: center;
 }
-.navigation__img-back-touch{
+.return__img{
     width: 18px;
     height: 18px;
     cursor: pointer;
 }
-.navigation__btn{
+.navigation__btn ,.header__save{
     padding: 0.7rem 1.6rem;
     border-radius: 1.5rem;
     border: none;
     background-color: var(--hover-btn-bg-color);
 }
-.picture__width{
-    width: 162px;
-    height: 162px;
-    cursor: pointer;
-    margin-top: 5.5rem;
+.content-contact-add__img-user{
+    /* background-color: yellow; */
+    padding-left: 40px;
 }
-.form__btn{
+.img-user__img{
+    width: 152px;
+    height: auto;
+    cursor: pointer;
+    margin-top: 1.2rem;
+}
+.content-contact-add__libelle{
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
-    justify-content: center;
-    width: 20%;
+    justify-content: space-around;
+    width: 9%;
     gap: var(--btn-gap);
     /* padding: 0.05rem 0.8rem; */
-    cursor: pointer;
     border: 0.1rem solid  var(--input-color-gris);
     border-radius: 0.8rem;
     /* border: var(--border-form-libelle); */
     background-color: white;
+    cursor: pointer;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    margin-left: 40px;
+    margin-bottom: 12px;
+    margin-top: 1.1rem;
 }
-.form__btn:hover{
+.content-contact-add__libelle:hover{
     border: 0.1rem solid  var(--input-color-gris);
     background-color: #E7F0FE;
     transition:background-color 1s ease-in-out;
 }
-.form__input{
+.content-contact-add__form{
     display: flex;
     flex-direction: column;
     gap: var(--gap-form-input);
+    width: 65%;
+    padding-left: 40px;
+    /* overflow-y: scroll; */
+    /* background-color: red; */
 }
-.form__entreprise{
+.form__entreprise,.form__entreprise{
     display: flex;
     flex-direction: column;
     gap: var(--gap-form-input);
@@ -433,7 +455,12 @@ p{
     color: #1E64D4;
     font-size: 1.3rem;
 }
-.prenom__input{
+.form__input{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-form-input);
+}
+.input__first-name,.input__name,.bloc__entreprise,.entreprise__fonction,.email__input,.form__phone{
     padding: var(--padding-fomr-input); 
     font-size: var(--font-zize-form-input);
     border-radius: var(--border-raduis-form-input);
@@ -599,7 +626,7 @@ p{
   }
 
 .img__width{
-    width: 20%;
+    width: 24%;
     height: auto;
 }
 .img-description{
@@ -617,6 +644,9 @@ p{
 
     .main__content{
         height: 500px ;
+    }
+    .main__content-contact-add , .main__content-contact{
+        height: 465px;
     }
 }
 

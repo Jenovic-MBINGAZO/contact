@@ -78,7 +78,7 @@
         </div>
         <div class="main__content-contact" id="mainContent">
             <p class="content--title" id="checkContactsExist">
-                Contacts (0)
+                Contacts (1)
             </p>
         
             <div class="content__img" id="content__img">
@@ -119,7 +119,38 @@
         </div>
 
         <div class="main__content-contact-add" id="mainContentContactAdd">
-            
+            <div class="content-contact-add__header">
+                <div class="header__return">
+                    <img src="img/logo/retour.png" alt="retour" class="return__img">
+                </div>
+                <button class="header__save" disabled id="enregistre">Enregistre</button>
+            </div>
+            <div class="content-contact-add__img-user">
+                <img src="img/logo/userrrrr.png" alt="user" class="img-user__img">
+            </div>
+            <button class="content-contact-add__libelle" title="Gerer les libellés">
+                <span>+</span>
+                <span>Libellé</span>
+            </button>
+            <div class="content-contact-add__form">
+                <div class="form__input">
+                    <div class="input__bloc">
+                        <input type="text" class="input__first-name input__first-name--padding" id="prenom__input" placeholder="Prénom">
+                    </div>
+                    <input type="text" class="input__name" placeholder="Nom" id="nom__input"> 
+                </div>
+
+                <div class="form__entreprise">
+                    <div class="entreprise__bloc">
+                        <input type="text" class="bloc__entreprise" id="entreprise__input" placeholder="Entreprise">
+                    </div>
+                    <input type="text" class="entreprise__fonction" placeholder="Fonction" id="fonction__input"> 
+                </div>
+                <div class="form__email">
+                    <input type="email" class="email__input" id="email__input" placeholder="E-mail">
+                </div>
+                <input type="tel" id="phone" placeholder="Télephone" class="form__phone" value="+243">
+            </div>
         </div>
 
 
@@ -129,10 +160,10 @@
     
     </form>
     <script src="index.js"></script>
-    <!-- <script src="./build/js/intlTelInput.js"></script> -->
-    <!-- <script>
+    <script src="./build/js/intlTelInput.js"></script>
+    <script>
         let input = document.querySelector("#phone");
         window.intlTelInput(input,{})
-    </script> -->
+    </script>
 </body>
 </html>
