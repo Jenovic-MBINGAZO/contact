@@ -210,36 +210,48 @@ document.addEventListener("click",function(evt){
 }
 );
 
-let tabNam = [];
-let tabEmail = [];
-let tabPhone = [];
-let tabFonction = [];
-
-const divmailListContact = document.createElement("div");
-// divmailListContact.className = "main__list";
-// mainContentListContact.append(divmailListContact);
-let  divListTitleContact ;
+/* Add contact fonctionality 1  */
+const contactData = {
+    names: [],
+    emails: [],
+    phones: [],
+    functions: []
+};
 
 
-enregistre.addEventListener("click", function() {
-    let title =  prenom__input.value + "   " +nom__input.value;
-    let fonction = fonction__input.value + "," + entreprise__input.value;
-    tabNam.push(title);
-    tabEmail.push(email__input.value);
-    tabPhone.push(phone.value);
-    tabFonction.push(fonction);
-    
-    // Save array and update the localStorage
-    localStorage.setItem('tabNam', JSON.stringify(tabNam));
-    localStorage.setItem('tabEmail',JSON.stringify(tabEmail));
-    localStorage.setItem('tabPhone',JSON.stringify(tabPhone));
-    localStorage.setItem('tabFonction',JSON.stringify(tabFonction));
-    
-    // display elements update
-    // DisplayName();
-    // DisplayEMail();
-    // DisplayPhone();
-    // DisplayFonction();
+// Save contacts to localStorage
+function saveContacts() {
+    localStorage.setItem('tabNam', JSON.stringify(contactData.names));
+    localStorage.setItem('tabEmail', JSON.stringify(contactData.emails));
+    localStorage.setItem('tabPhone', JSON.stringify(contactData.phones));
+    localStorage.setItem('tabFonction', JSON.stringify(contactData.functions));
+}
+
+// Display contacts from localStorage
+function getContactsLocalStorage() {
+    contactData.names = JSON.parse(localStorage.getItem('tabNam')) || [];
+    contactData.emails = JSON.parse(localStorage.getItem('tabEmail')) || [];
+    contactData.phones = JSON.parse(localStorage.getItem('tabPhone')) || [];
+    contactData.functions = JSON.parse(localStorage.getItem('tabFonction')) || [];
+}
+
+getContactsLocalStorage()
+
+enregistre.addEventListener("click", function(evt) {
+    const title = `${prenom__input.value} ${nom__input.value}`;
+    const fonction = `${fonction__input.value}, ${entreprise__input.value}`;
+
+    if (!prenom__input.value || !nom__input.value || !phone.value) {
+        alert("S'il vous-plait remplissez tous les champs requis.");
+        return;
+    }
+
+    contactData.names.push(title);
+    contactData.emails.push(email__input.value);
+    contactData.phones.push(phone.value);
+    contactData.functions.push(fonction);
+
+    saveContacts();
 
     prenom__input.value = "";
     nom__input.value = "";
@@ -247,144 +259,68 @@ enregistre.addEventListener("click", function() {
     phone.value = "";
     fonction__input.value = "";
     entreprise__input.value = "";
-  
+
+    displayContacts();
 });
 
-
-// Function display elements
 const divListTitle = manageDomValues("listTitle");
-console.log(divListTitle);
-function DisplayName() {
-    // Effacer le contenu précédent
-    // mainContentListContact.innerHTML = '';
-    // Ajouter chaque élément du tableau comme div
-    for (const name of tabNam) {
-       const div = document.createElement("div");
-       divListTitle.append(div);
-       div.className = "title__name";
-       div.textContent = name;
-    }
-}
 
-const divListEmail = manageDomValues("listEmail");
-console.log(divListEmail);
-function DisplayEMail() {
+function displayContacts() {
+    mainContentListContact.innerHTML = ""; // Clear space list contact
+    // for (let i = 0; i < contactData.phones.length; i++) {
+    //     const contactDiv = document.createElement("div");
+    //     contactDiv.className = "contact-item";
+    //     contactDiv.textContent = `${contactData.names[i]} - ${contactData.phones[i]} - ${contactData.emails[i]} - ${contactData.functions[i]}`;
+    //     mainContentListContact.appendChild(contactDiv);
+    // }
+    for (let i = 0; i < contactData.phones.length; i++) {
 
-    for (const email of tabEmail) { 
-        // const divv = document.querySelector(".list__title");
-        // const div = document.createElement("div");
-        // divv.append(div);
-        const div = document.createElement("div");
-        divListEmail.append(div);
-        div.className = "title__email";
-        div.textContent = email;
-    }
+        //Generation de color random 
+        function randomColor() {
+            let red = Math.floor(Math.random() * 256); 
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
+
+            // Color the css
+            let color = 'rgb(' + red + ',' + green + ',' + blue + ')';
     
-}
+            return color;
+        }
+        randomColor();
 
-const divListPhone = manageDomValues("listPhone");
-function DisplayPhone() {
+        const contactDiv= document.createElement("div") ;
+        contactDiv.className = "contact-item";
+       
 
-    for (const phone of tabPhone) {
-        // const divv = document.querySelector(".list__title");
-        // const div = document.createElement("div");
-        // divv.append(div);
-        const div = document.createElement("div");
-        divListPhone.append(div);
-        div.className = "title__phone";
-        div.textContent = phone;
+        const divIcone = document.createElement("div");
+        divIcone.className = "contact-icone";
+        divIcone.textContent ="J";
+        divIcone.style.backgroundColor = (randomColor());
+
+        const nameDiv = document.createElement("div");
+        nameDiv.className = "contact-name";
+        nameDiv.textContent = contactData.names[i];
+
+        const phoneDiv = document.createElement("div");
+        phoneDiv.className = "contact-phone";
+        phoneDiv.textContent = contactData.phones[i];
+
+        const emailDiv = document.createElement("div");
+        emailDiv.className = "contact-email";
+        emailDiv.textContent = contactData.emails[i];
+
+        const functionDiv = document.createElement("div");
+        functionDiv.className = "contact-function";
+        functionDiv.textContent = contactData.functions[i];
+
+        contactDiv.appendChild(divIcone);
+        contactDiv.appendChild(nameDiv);
+        contactDiv.appendChild(emailDiv);
+        contactDiv.appendChild(phoneDiv);
+        contactDiv.appendChild(functionDiv);
+
+        mainContentListContact.appendChild(contactDiv);
     }
-    
 }
 
-const divListFonction = manageDomValues("listFonction");
-function DisplayFonction() {
-
-    for (const fonction of tabFonction) { 
-        // const divv = document.querySelector(".list__title");
-        // const div = document.createElement("div");
-        // divv.append(div);
-        const div = document.createElement("div");
-        divListFonction.append(div);
-        div.className = "title__fonction";
-        div.textContent = fonction;
-    }
-    
-}
-// localStorage.clear()
-//Display localStorage
-tabNam = JSON.parse(localStorage.getItem('tabNam')) || ["",];
-tabEmail = JSON.parse(localStorage.getItem('tabEmail')) || ["",];
-tabPhone = JSON.parse(localStorage.getItem('tabPhone')) || ["",];
-tabFonction = JSON.parse(localStorage.getItem('tabFonction')) || ["",];
-
-
-
-// Display elements
-DisplayName();
-DisplayEMail();
-DisplayPhone();
-DisplayFonction();
-
-
-
-
-// /* ----  add contact ----  */
-// const contact  = {
-//     nom : [],
-//     prenom : [],
-//     email : "",
-//     tel : "",
-//     fonction : "",
-//     entreprise : "",
-//     libele : ""
-// };
-
-// // function for stock de object contact in localStorage
-// function stockContacactLocalStorage(){
-//     localStorage.setItem("nom",contact.nom);
-//     localStorage.setItem("prenom",contact.prenom);
-//     localStorage.setItem("email",contact.email);
-//     localStorage.setItem("tel",contact.tel);
-//     localStorage.setItem("fonction",contact.fonction);
-//     localStorage.setItem("entreprise",contact.entreprise);
-//     localStorage.setItem("libele",contact.libele);
-// }
-
-// enregistre.addEventListener("click",function(){
-//     contact.nom.push(nom__input);
-//     contact.prenom.push(prenom__input);
-//     contact.email.push(email__input);
-//     contact.tel.push(phone);
-//     contact.fonction.push(fonction__input);
-//     contact.entreprise.push(entreprise__input);
-
-//     stockContacactLocalStorage();
-//     console.log(localStorage.getItem("nom"));
-//     console.log(contact.nom);
-// }
-// );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+displayContacts();
