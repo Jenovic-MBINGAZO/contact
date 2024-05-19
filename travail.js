@@ -414,3 +414,99 @@ inputTel.addEventListener("keydown",function(evt){
 
 
 console.log(mainContent);
+
+
+/*Active button */
+
+// prenom__input.addEventListener("keydown",function(){
+//     if (prenom__input.value.trim() !== "") {
+//         enregistre.disabled = false ;
+//         enregistre.style.backgroundColor = "#1E64D4";
+//         enregistre.style.color = "white";
+//         enregistre.style.fontWeight = "bold";
+//         enregistre.style.cursor = "pointer";
+//     }
+//     else{
+//         enregistre.disabled = true ;
+//         enregistre.style.backgroundColor = "";
+//         enregistre.style.color = "";
+//         enregistre.style.fontWeight = "";
+//         enregistre.style.cursor = "";
+//     }
+// }
+// );
+
+// nom__input.addEventListener("keydown",function(){
+//     if (nom__input.value.trim() !== "") {
+//         enregistre.disabled = false ;
+//         enregistre.style.backgroundColor = "#1E64D4";
+//         enregistre.style.color = "white";
+//         enregistre.style.fontWeight = "bold";
+//         enregistre.style.cursor = "pointer";
+//     }
+//     else{
+//         enregistre.disabled = true ;
+//         enregistre.style.backgroundColor = "";
+//         enregistre.style.color = "";
+//         enregistre.style.fontWeight = "";
+//         enregistre.style.cursor = "";
+//     }
+// }
+// );
+
+// entreprise__input.addEventListener("keydown",function(){
+//     if (entreprise__input.value.trim() !== "") {
+//         enregistre.disabled = false ;
+//         enregistre.style.backgroundColor = "#1E64D4";
+//         enregistre.style.color = "white";
+//         enregistre.style.fontWeight = "bold";
+//         enregistre.style.cursor = "pointer";
+//     }
+//     else{
+//         enregistre.disabled = true ;
+//         enregistre.style.backgroundColor = "";
+//         enregistre.style.color = "";
+//         enregistre.style.fontWeight = "";
+//         enregistre.style.cursor = "";
+//     }
+// }
+// );
+// fonction__input.addEventListener("keydown",function(){
+//     if (fonction__input.value.trim() !== "") {
+//         enregistre.disabled = false ;
+//         enregistre.style.backgroundColor = "#1E64D4";
+//         enregistre.style.color = "white";
+//         enregistre.style.fontWeight = "bold";
+//         enregistre.style.cursor = "pointer";
+//     }
+//     else{
+//         enregistre.disabled = true ;
+//         enregistre.style.backgroundColor = "";
+//         enregistre.style.color = "";
+//         enregistre.style.fontWeight = "";
+//         enregistre.style.cursor = "";
+//     }
+// }
+// );
+
+// email__input.addEventListener("keydown",function(){
+//     if (email__input.value.trim() !== "") {
+//         enregistre.disabled = false ;
+//         enregistre.style.backgroundColor = "#1E64D4";
+//         enregistre.style.color = "white";
+//         enregistre.style.fontWeight = "bold";
+//         enregistre.style.cursor = "pointer";
+//     }
+//     else{
+//         enregistre.disabled = true ;
+//         enregistre.style.backgroundColor = "";
+//         enregistre.style.color = "";
+//         enregistre.style.fontWeight = "";
+//         enregistre.style.cursor = "";
+//     }
+// }
+// );
+
+
+
+

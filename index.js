@@ -35,6 +35,8 @@ const btnCreateContacts = manageDomValues("btnCreateContacts");
 const mainContentContactAdd = manageDomValues("mainContentContactAdd");
 const contact__button = manageDomValues("contact__button");
 
+
+
 /* event listener from dom */
 search.addEventListener("click",function(){
     // search__contacts__boloc.style.backgroundColor = "red"
@@ -57,12 +59,18 @@ humberger.addEventListener("click",function(){
    if (!isMenuOpen) {
         main__menu.classList.add("main__menu--width");
         main__content.style.width = "100%";
+        mainContentExiste.style.width = "100%";
+        mainContentContactAdd.style.width = "100%";
         main__content.style.transition = "width 0.5s linear";
+        mainContentExiste.style.transition =  "width 0.5s linear";
+        mainContentContactAdd.style.transition =  "width 0.5s linear";
         isMenuOpen = true;
    }
    else{
         main__menu.classList.remove("main__menu--width");
         main__content.style.width = ""; 
+        mainContentExiste.style.width = "";
+        mainContentContactAdd.style.width = "";
         isMenuOpen = false;
    }
 }
@@ -108,97 +116,7 @@ const entreprise__input = manageDomValues("entreprise__input");
 const fonction__input = manageDomValues("fonction__input");
 const email__input = manageDomValues("email__input");
 const phone = manageDomValues("phone");
-
-
-
-prenom__input.addEventListener("keydown",function(){
-    if (prenom__input.value.trim() !== "") {
-        enregistre.disabled = false ;
-        enregistre.style.backgroundColor = "#1E64D4";
-        enregistre.style.color = "white";
-        enregistre.style.fontWeight = "bold";
-        enregistre.style.cursor = "pointer";
-    }
-    else{
-        enregistre.disabled = true ;
-        enregistre.style.backgroundColor = "";
-        enregistre.style.color = "";
-        enregistre.style.fontWeight = "";
-        enregistre.style.cursor = "";
-    }
-}
-);
-
-nom__input.addEventListener("keydown",function(){
-    if (nom__input.value.trim() !== "") {
-        enregistre.disabled = false ;
-        enregistre.style.backgroundColor = "#1E64D4";
-        enregistre.style.color = "white";
-        enregistre.style.fontWeight = "bold";
-        enregistre.style.cursor = "pointer";
-    }
-    else{
-        enregistre.disabled = true ;
-        enregistre.style.backgroundColor = "";
-        enregistre.style.color = "";
-        enregistre.style.fontWeight = "";
-        enregistre.style.cursor = "";
-    }
-}
-);
-
-entreprise__input.addEventListener("keydown",function(){
-    if (entreprise__input.value.trim() !== "") {
-        enregistre.disabled = false ;
-        enregistre.style.backgroundColor = "#1E64D4";
-        enregistre.style.color = "white";
-        enregistre.style.fontWeight = "bold";
-        enregistre.style.cursor = "pointer";
-    }
-    else{
-        enregistre.disabled = true ;
-        enregistre.style.backgroundColor = "";
-        enregistre.style.color = "";
-        enregistre.style.fontWeight = "";
-        enregistre.style.cursor = "";
-    }
-}
-);
-fonction__input.addEventListener("keydown",function(){
-    if (fonction__input.value.trim() !== "") {
-        enregistre.disabled = false ;
-        enregistre.style.backgroundColor = "#1E64D4";
-        enregistre.style.color = "white";
-        enregistre.style.fontWeight = "bold";
-        enregistre.style.cursor = "pointer";
-    }
-    else{
-        enregistre.disabled = true ;
-        enregistre.style.backgroundColor = "";
-        enregistre.style.color = "";
-        enregistre.style.fontWeight = "";
-        enregistre.style.cursor = "";
-    }
-}
-);
-
-email__input.addEventListener("keydown",function(){
-    if (email__input.value.trim() !== "") {
-        enregistre.disabled = false ;
-        enregistre.style.backgroundColor = "#1E64D4";
-        enregistre.style.color = "white";
-        enregistre.style.fontWeight = "bold";
-        enregistre.style.cursor = "pointer";
-    }
-    else{
-        enregistre.disabled = true ;
-        enregistre.style.backgroundColor = "";
-        enregistre.style.color = "";
-        enregistre.style.fontWeight = "";
-        enregistre.style.cursor = "";
-    }
-}
-);
+let mainContentListContact = document.getElementById("content__main");
 
 phone.addEventListener("keydown",function(){
     if (phone.value.trim() !== "") {
@@ -292,150 +210,174 @@ document.addEventListener("click",function(evt){
 }
 );
 
-/* ----  add contact ----  */
-const contacts = {
-    title : [],
-    mail : [],
-    phone : [],
-    fonctionEntreprise : [],
-    libele : [],
-    prenom : [],
-}
+let tabNam = [];
+let tabEmail = [];
+let tabPhone = [];
+let tabFonction = [];
+
+const divmailListContact = document.createElement("div");
+// divmailListContact.className = "main__list";
+// mainContentListContact.append(divmailListContact);
+let  divListTitleContact ;
 
 
-//  console.log(prenom)
+enregistre.addEventListener("click", function() {
+    let title =  prenom__input.value + "   " +nom__input.value;
+    let fonction = fonction__input.value + "," + entreprise__input.value;
+    tabNam.push(title);
+    tabEmail.push(email__input.value);
+    tabPhone.push(phone.value);
+    tabFonction.push(fonction);
+    
+    // Save array and update the localStorage
+    localStorage.setItem('tabNam', JSON.stringify(tabNam));
+    localStorage.setItem('tabEmail',JSON.stringify(tabEmail));
+    localStorage.setItem('tabPhone',JSON.stringify(tabPhone));
+    localStorage.setItem('tabFonction',JSON.stringify(tabFonction));
+    
+    // display elements update
+    // DisplayName();
+    // DisplayEMail();
+    // DisplayPhone();
+    // DisplayFonction();
 
-/* ----  add contact ----  */
-
-// Function to display contacts
-function displayContacts() {
-    console.log("Contacts:");
-    var keys = Object.keys(contacts);
-    for (var i = 0; i < keys.length; i++) {
-        var key = keys[i];
-        if (Array.isArray(contacts[key])) {
-            for (var j = 0; j < contacts[key].length; j++) {
-                console.log(contacts[key][j]);
-            }
-        }
-    }
-}
-
-// Function to save contacts to localStorage
-function saveContactsToLocalStorage() {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-}
-
-// Function to load contacts from localStorage
-function loadContactsFromLocalStorage() {
-    var storedContacts = localStorage.getItem('contacts');
-    if (storedContacts) {
-        var parsedContacts = JSON.parse(storedContacts);
-        var keys = Object.keys(parsedContacts);
-        for (var i = 0; i < keys.length; i++) {
-            var key = keys[i];
-            contacts[key] = parsedContacts[key];
-        }
-    }
-}
-
-// Load contacts from localStorage and display them on page load
-loadContactsFromLocalStorage();
-displayContacts();
-
-enregistre.addEventListener("click", function(evt) {
-    var prenom = prenom__input.value;
-    var nom = nom__input.value;
-    var entreprise = entreprise__input.value;
-    var fonction = fonction__input.value;
-    var email = email__input.value;
-    var tel = phone.value;
-
-    contacts.title.push(nom);
-    contacts.mail.push(email);
-    contacts.phone.push(tel);
-    contacts.fonctionEntreprise.push(fonction);
-    contacts.prenom.push(prenom);
-
-    // Save contacts to localStorage
-    saveContactsToLocalStorage();
-
-    // Réinitialiser les champs de formulaire
     prenom__input.value = "";
     nom__input.value = "";
-    entreprise__input.value = "";
-    fonction__input.value = "";
     email__input.value = "";
     phone.value = "";
-
-    // Afficher les valeurs ajoutées
-    displayContacts();
+    fonction__input.value = "";
+    entreprise__input.value = "";
+  
 });
 
-// Pour que les informations des contacts restent dans le tableau même après le rechargement de la page, tu peux utiliser le stockage local (localStorage) du navigateur. Cela permet de sauvegarder les données de manière persistante.
 
-// Étapes :
-// Sauvegarder les contacts dans localStorage après chaque ajout.
-// Charger les contacts depuis localStorage lors du chargement de la page.
-// Afficher les contacts chargés depuis localStorage.
+// Function display elements
+const divListTitle = manageDomValues("listTitle");
+console.log(divListTitle);
+function DisplayName() {
+    // Effacer le contenu précédent
+    // mainContentListContact.innerHTML = '';
+    // Ajouter chaque élément du tableau comme div
+    for (const name of tabNam) {
+       const div = document.createElement("div");
+       divListTitle.append(div);
+       div.className = "title__name";
+       div.textContent = name;
+    }
+}
 
-// Ce code permet de sauvegarder les contacts dans localStorage et de les charger automatiquement lorsque la page est rechargée, tout en affichant les contacts actuels.
- 
+const divListEmail = manageDomValues("listEmail");
+console.log(divListEmail);
+function DisplayEMail() {
 
-// aveContactsToLocalStorage : Cette fonction convertit l'objet contacts en une chaîne JSON et le stocke dans localStorage.
-// loadContactsFromLocalStorage : Cette fonction récupère les données de localStorage, les parse en objet et les assigne à l'objet contacts.
-// Appel initial : loadContactsFromLocalStorage est appelé au chargement de la page pour récupérer et afficher les contacts stockés.
+    for (const email of tabEmail) { 
+        // const divv = document.querySelector(".list__title");
+        // const div = document.createElement("div");
+        // divv.append(div);
+        const div = document.createElement("div");
+        divListEmail.append(div);
+        div.className = "title__email";
+        div.textContent = email;
+    }
+    
+}
 
-// enregistre.addEventListener("click",function(evt){
-//     const prenom = prenom__input.value;
-//     const nom = nom__input.value ;
-//     const entreprise = entreprise__input.value;
-//     const fonction = fonction__input.value;
-//     const email = email__input.value;
-//     const tel = phone.value;
-  
-//     contacts.title.push(nom)
-//     contacts.mail.push(email);
-//     contacts.phone.push(tel);
-//     contacts.fonctionEntreprise.push(fonction);
-//     contacts.prenom.push(prenom);
-//     // console.log(prenom__input.value);
+const divListPhone = manageDomValues("listPhone");
+function DisplayPhone() {
 
-//     prenom__input.value = "";
-//     nom__input.value = "";
-//     entreprise__input.value = "";
-//     fonction__input.value = "";
-//     email__input.value = "";
-//     phone.value = "";
+    for (const phone of tabPhone) {
+        // const divv = document.querySelector(".list__title");
+        // const div = document.createElement("div");
+        // divv.append(div);
+        const div = document.createElement("div");
+        divListPhone.append(div);
+        div.className = "title__phone";
+        div.textContent = phone;
+    }
+    
+}
 
-//     const keys = Object.keys(contacts);
-//     for (const key of keys) {
-//         if (Array.isArray(contacts[key])) {
-//             for (const element of contacts[key]) {
-//                 console.log(element);
-//             }
-//         }
-//     }
+const divListFonction = manageDomValues("listFonction");
+function DisplayFonction() {
+
+    for (const fonction of tabFonction) { 
+        // const divv = document.querySelector(".list__title");
+        // const div = document.createElement("div");
+        // divv.append(div);
+        const div = document.createElement("div");
+        divListFonction.append(div);
+        div.className = "title__fonction";
+        div.textContent = fonction;
+    }
+    
+}
+// localStorage.clear()
+//Display localStorage
+tabNam = JSON.parse(localStorage.getItem('tabNam')) || ["",];
+tabEmail = JSON.parse(localStorage.getItem('tabEmail')) || ["",];
+tabPhone = JSON.parse(localStorage.getItem('tabPhone')) || ["",];
+tabFonction = JSON.parse(localStorage.getItem('tabFonction')) || ["",];
+
+
+
+// Display elements
+DisplayName();
+DisplayEMail();
+DisplayPhone();
+DisplayFonction();
+
+
+
+
+// /* ----  add contact ----  */
+// const contact  = {
+//     nom : [],
+//     prenom : [],
+//     email : "",
+//     tel : "",
+//     fonction : "",
+//     entreprise : "",
+//     libele : ""
+// };
+
+// // function for stock de object contact in localStorage
+// function stockContacactLocalStorage(){
+//     localStorage.setItem("nom",contact.nom);
+//     localStorage.setItem("prenom",contact.prenom);
+//     localStorage.setItem("email",contact.email);
+//     localStorage.setItem("tel",contact.tel);
+//     localStorage.setItem("fonction",contact.fonction);
+//     localStorage.setItem("entreprise",contact.entreprise);
+//     localStorage.setItem("libele",contact.libele);
+// }
+
+// enregistre.addEventListener("click",function(){
+//     contact.nom.push(nom__input);
+//     contact.prenom.push(prenom__input);
+//     contact.email.push(email__input);
+//     contact.tel.push(phone);
+//     contact.fonction.push(fonction__input);
+//     contact.entreprise.push(entreprise__input);
+
+//     stockContacactLocalStorage();
+//     console.log(localStorage.getItem("nom"));
+//     console.log(contact.nom);
 // }
 // );
 
-// console.log(contacts.prenom);
 
 
-// console.log(prenom__input.value);
 
-//obtenir toute le liste de la clé ou le nom de proprété avec Array.krys(array)
 
-// const keys = Object.keys(contacts);
-// parcourir chaque clé 
-// for (const key of keys) {
-//     if (Array.isArray(contacts[key])) {
-//         //afficher les élements du tableau
-//         for (const element of contacts[key]) {
-//             console.log(element);
-//         }
-//     }
-// }
+
+
+
+
+
+
+
+
+
 
 
 
