@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Contacts</title>
+    <link rel="icon" type="image/x-icon" href="img/logo/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./build/css/demo.css"> -->
+    <link rel="stylesheet" href="./build/css/intlTelInput.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+
+        <div class="header__topbar">
+
+            <div class="topbar__logo">
+
+                <div class="logo__humberger">
+                    
+                    <img src="img/logo/humberger.png" alt="" class="humberger__img--size" id="humberger">
+
+                </div>
+
+                <div class="logo__link">
+                    <a href="#" class="link__img links--decoration" title="Contacts">
+                        <img src="img/logo/logo.png" alt="Google contacts" class="img--size">
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="topbar__p">
+                <p class="p__links">
+                    <a href="#" class="links--size links--decoration" title="Contacts">Contacts</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="header__search">
+            <div class="search__contacts" id="search__contacts__boloc">
+                <div class="contacts__icone contacts__icone--hover">
+                    <a href="#" title="Recherche" class="icone__link">
+                        <img src="img/logo/search.png" alt="Recherche" class="icone__link--size">
+                    </a>
+                </div>
+                <div class="contacts__search " id="contacts__search">
+                    <input type="text"  class="search__input" placeholder="Recherche" id="search">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main" id="main">
+        <div class="main__menu" id="main__menu">
+
+            <div class="menu__add-contact menu__add-contact--center menu__add-contact--padding-y">
+               <button class="add-contact__button add-contact__button--bg-color add-contact__button--hover" id="btnCreateContacts">
+                    <img src="img/logo/add.png" alt="Ajout contact" class="link__img">
+                    <div class="add-contact__text">
+                        Créer un contact
+                    </div>
+               </button>
+            </div>
+            <div class="menu__contact">
+                <button class="contact__button" id="contact__button">
+                    <img src="img/logo/user.png" alt="contact"  class="button__img">
+                    <span class="contact__text">Contacts</span>
+                </button>
+            </div>
+            
+        </div>
+        <div class="main__content-contact" id="mainContent">
+            <p class="content--title" id="checkContactsExist">
+                
+            </p>
+        
+            <div class="content__img" id="content__img">
+                <img src="https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell1.png" class="img__content img__width" alt="Aucun contact" id="img">
+                <p class="img-description">
+                    Aucun contact pour l'instant.
+                </p>
+            </div>
+        </div>
+        <div class="main__content-empty-contact" id="mainContentExiste">
+            <p class="content--title" id="checkContactsExistt">
+                Contacts (11)
+            </p>
+        
+            <div id="mainContactsNoExist" class="content__header content__header--size">
+                <div class="header__name header__name--padding-x" id="clean1">
+                    Titre
+                </div>
+                <div class="header__couriel header__couriel--padding-x" id="clean2">
+                    Email
+                </div>
+                <div class="header__tel header__tel--padding-x" id="clean3">
+                    Numéro de téléphone
+                </div>
+                <div class="header__function header__function--padding-x" id="clean5">
+                    Fonction et entreprise
+                </div>
+                <div class="header__libelle">
+                    <div class="libele__title" id="clean6">Libellés</div>
+                    <div class="libele__parametre">
+                        <div class="parametre__img-delete">
+                            <img src="./img/logo/libele.png" alt="Modification de liste" title="Modification de liste" class="parametre__img-delete--padding" id="update">
+                        </div>
+                        <!-- <div class="parametre__img-delete">
+                            <img src="./img/logo/editer.png" alt="Modification de liste" title="Modification de liste" class="parametre__img-delete--padding" id="update">
+                        </div> -->
+                        <!-- <div class="parametre__img-delete">
+                            <img src="./img/logo/delete.png" alt="Suppression de liste"  title="Suppression de liste" class="parametre__img-delete--padding" id="delete">
+                        </div> -->
+                        <div class="parametre__img-settings">
+                            <img src="./img/logo/parametre.png" alt="Paramètre de liste" title="Paramètre de liste" class="parametre__img-settings--padding" id="settings">
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <hr id="hr">
+            <div class="content__main" id="content__main">
+                <!-- <div class="list__name">nom</div>
+                <div  class="list__email" id="listEmail">email</div>
+                <div class="list__phone" id="listPhone">phone</div>
+                <div class="list__fonction" id="listFonction">fonction</div>
+                <div>libelles</div> -->
+                   
+                <div class="list__title" id="listTitle">
+                   
+                </div>
+
+                <!-- <div class="list__email" id="listEmail"></div>
+                <div class="list__phone" id="listPhone"></div>
+                <div class="list__fonction" id="listFonction"></div>
+                <div class="list__libele"></div> -->
+            </div>
+            
+          
+            
+           <!-- <div class="content__input" id="content__input">
+                <input type="tel" placeholder="Téléphone" value="+243" id="phone" class="input__tel input__tel--display content__input content__input--size" >
+           </div> -->
+        </div>
+
+        <div class="main__content-contact-add" id="mainContentContactAdd">
+            <div class="content-contact-add__header">
+                <div class="header__return">
+                    <img src="img/logo/retour.png" alt="retour" class="return__img">
+                </div>
+                <button class="header__save" disabled id="enregistre">Enregistre</button>
+            </div>
+            <div class="content-contact-add__img-user">
+                <img src="img/logo/userrrrr.png" alt="user" class="img-user__img">
+            </div>
+            <button class="content-contact-add__libelle" title="Gerer les libellés">
+                <span>+</span>
+                <span>Libellé</span>
+            </button>
+            <form action="" class="content-contact-add__form">
+                <div class="form__input">
+                    <div class="input__bloc">
+                        <input type="text" class="input__first-name input__first-name--padding" id="prenom__input" placeholder="Prénom">
+                    </div>
+                    <input type="text" class="input__name" placeholder="Nom" id="nom__input"> 
+                </div>
+
+                <div class="form__entreprise">
+                    <div class="entreprise__bloc">
+                        <input type="text" class="bloc__entreprise" id="entreprise__input" placeholder="Entreprise">
+                    </div>
+                    <input type="text" class="entreprise__fonction" placeholder="Fonction" id="fonction__input"> 
+                </div>
+                <div class="form__email">
+                    <input type="email" class="email__input" id="email__input" placeholder="E-mail">
+                </div>
+                <input type="tel" id="phone" placeholder="Télephone" class="form__phone" value="+243">
+            </div>
+            </form>
+        </div>
+
+
+    </main>
+<!-- 
+        <input type="tel" id="phone" placeholder="phone number" value="+243"> -->
+    
+    </form>
+    <script src="index.js"></script>
+    <script src="./build/js/intlTelInput.js"></script>
+    <script>
+        let input = document.querySelector("#phone");
+        window.intlTelInput(input,{})
+    </script>
+</body>
+</html>

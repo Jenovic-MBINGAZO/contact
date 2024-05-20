@@ -1,0 +1,93 @@
+
+1.Initializing my project
+2.importing icons
+3.google contact navigation bar
+4.end of task user interface design
+5.Integrated JavaScript file to manage dynamic behavior.
+6.add function conctat
+7.added humbergur menu
+8.creation of the contact creation block
+9.create button contact
+
+
+
+   <!-- <div class="main__list" id="main__list">
+                    <div class="list__title" id="title">
+                        divNom
+                        divPrenom
+                        divEmail
+                        dibPhone
+                        divFonction
+                        divLibelle
+                    </div >
+                    <div  class="list__email">
+                        email
+                    </div >
+                    <div  class="list__phone">
+                        tel
+                    </div >
+                    <div  class="list__fonction">
+                        fonction
+                    </div >
+                    <div  class="list__libele">
+                        libele
+                    </div >
+                </div> -->
+
+
+                <body>
+                    <div class="main__content" id="mainContent">
+
+                    </div>
+
+                    <script>
+                        const contact  = {
+                        nom : [],
+                        prenom : [],
+                        email : "",
+                        tel : "",
+                        fonction : "",
+                        entreprise : "",
+                        libele : ""
+                    };
+
+                    //sauve value of locastorage
+                    function localStorageSave (){
+                        localStorage.setItem("nom",contact.nom);
+                        localStorage.setItem("prenom",contact.prenom);
+                        localStorage.setItem("email",contact.email);
+                        localStorage.setItem("tel",contact.tel);
+                        localStorage.setItem("fonction",contact.fonction);
+                        localStorage.setItem("entreprise",contact.entreprise);
+                        localStorage.setItem("libele",contact.libele);
+                    }
+
+enregistre.addEventListener("click",function(){
+    contact.prenom.push(prenom__input.value);
+    contact.nom.push(nom__input.value);
+    contact.email = email__input.value;
+    contact.tel = phone.value;
+    contact.fonction = fonction__input.value;
+    contact.entreprise = entreprise__input.value;
+
+    localStorageSave();
+
+    //reset champ input
+    prenom__input.value = "";
+    nom__input.value = "";
+    email__input.value = "";
+    phone.value = "";
+    fonction__input.value = "";
+    entreprise__input.value = "";
+
+    // let contentMain = manageDomValues("content__main");
+ let listName = localStorage.getItem("nom");
+ let divListName = document.createElement("div");
+ contentMain.append(divListName);
+divListName.textContent = listName;
+
+}
+);
+
+                    </script>
+                </body>
