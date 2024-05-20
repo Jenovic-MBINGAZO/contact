@@ -625,12 +625,15 @@ p{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* flex-direction: column; */
     /* background-color: rgb(202, 199, 199); */
+    /* background-color: rebeccapurple; */
 }
 .libele__parametre{
     display: flex;
-    gap:25px;
+    gap:2px;
     cursor: pointer;
+    justify-content: flex-end;
 }
 /* .parametre__img-cursor--hover:hover{
 
@@ -863,6 +866,14 @@ p{
 }
 .parametre__img-delete{
     display: none;
+   
+}
+.seclected-checbox{
+    width: 20%;
+    height: 50px;
+  /*+   background-color: red;+++++++++++++++++++++++++++++++++++*/
+    display: flex;
+    align-items: center;
 }
 
 @media screen and (max-width : 1366px) {

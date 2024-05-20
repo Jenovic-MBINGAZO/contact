@@ -364,6 +364,52 @@ function displayContacts() {
         //         }
         //     }
         // ); 
+     
+        //gestion the checkbox
+        inputCheckbox.addEventListener("change", function(){
+            let elementSelected = 0;
+            elementSelected = + 1 ;
+            if (inputCheckbox.checked) {
+                elementSelected = + 1 ;
+                console.log(elementSelected);
+                const clean1 = manageDomValues("clean1");
+                clean1.style.display= "none";
+                const clean2 = manageDomValues("clean2");
+                clean2.style.display = "none";
+                const clean3 = manageDomValues("clean3");
+                clean3.style.display = "none";
+                const clean5 = manageDomValues("clean5");
+                clean5.style.display = "none";
+                const clean6 = manageDomValues("clean6");
+                clean6.style.display = "none";
+
+                const div = document.createElement("div");
+                div.className = "seclected-checbox";
+
+                const mainContactsNoExist = manageDomValues("mainContactsNoExist");
+                mainContactsNoExist.append(div);
+                mainContactsNoExist.style.display = "flex";
+                mainContactsNoExist.style.flexDirection =" row-reverse";
+                mainContactsNoExist.style.justifyContent = "space-between";
+                // mainContactsNoExist.style.backgroundColor= "yellow";
+               mainContactsNoExist.style.alignItems = "center";
+
+                const positionBlocLabel = document.querySelector(".header__libelle");
+                positionBlocLabel.style.flexDirection ="column";
+
+                const parametreImgDelete = document.querySelector(".parametre__img-delete");
+                parametreImgDelete.style.display = "flex";
+
+
+
+            }
+            else{
+                console.log("pas selectionner");
+            }
+        }
+    );
+
+
     }
 }
 
