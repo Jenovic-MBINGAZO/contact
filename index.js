@@ -264,7 +264,8 @@ enregistre.addEventListener("click", function(evt) {
 });
 
 const divListTitle = manageDomValues("listTitle");
-
+let i ;
+let id ;
 function displayContacts() {
     mainContentListContact.innerHTML = ""; // Clear space list contact
     // for (let i = 0; i < contactData.phones.length; i++) {
@@ -273,7 +274,8 @@ function displayContacts() {
     //     contactDiv.textContent = `${contactData.names[i]} - ${contactData.phones[i]} - ${contactData.emails[i]} - ${contactData.functions[i]}`;
     //     mainContentListContact.appendChild(contactDiv);
     // }
-    for (let i = 0; i < contactData.phones.length; i++) {
+   
+    for ( i = 0; i < contactData.phones.length; i++) {
 
         //Generation de color random 
         function randomColor() {
@@ -287,19 +289,26 @@ function displayContacts() {
             return color;
         }
         randomColor();
-
         const contactDiv= document.createElement("div") ;
         contactDiv.className = "contact-item";
+        contactDiv.id = "contactItem" + i ;
        
 
         const divIcone = document.createElement("div");
         divIcone.className = "contact-icone";
-        divIcone.textContent ="J";
-        divIcone.style.backgroundColor = (randomColor());
+        divIcone.id = "contactIcone" + i;
+        let lengthName = contactData.names[1].length;
 
+        //Disay first name for the contact
+        for (let j = 0; j < lengthName; j++) {
+              divIcone.textContent = contactData.names[i][0];
+        }
+
+        divIcone.style.backgroundColor = (randomColor());
         const nameDiv = document.createElement("div");
         nameDiv.className = "contact-name";
         nameDiv.textContent = contactData.names[i];
+        
 
         const phoneDiv = document.createElement("div");
         phoneDiv.className = "contact-phone";
@@ -313,14 +322,40 @@ function displayContacts() {
         functionDiv.className = "contact-function";
         functionDiv.textContent = contactData.functions[i];
 
+        // add div in contactDIv
         contactDiv.appendChild(divIcone);
         contactDiv.appendChild(nameDiv);
         contactDiv.appendChild(emailDiv);
         contactDiv.appendChild(phoneDiv);
         contactDiv.appendChild(functionDiv);
 
+        // add contactDiv in main contener 
         mainContentListContact.appendChild(contactDiv);
+
+        divIcone.addEventListener("mouseover",function(evt){
+            divIcone.style.backgroundColor = "";
+            // divIcone.textContent = "";
+        });
+        document.addEventListener("mouseover",function(evt){
+            if (evt.target !==  divIcone ) {
+                    divIcone.style.backgroundColor = (randomColor());
+                    divIcone.classList.add("effect-trasition-icone");
+                }
+            }
+        ); 
     }
 }
 
 displayContacts();
+
+//Display number the contact
+// console.log(checkContactsExist);
+let compt = i +1;
+checkContactsExist.textContent = "Contact" + " " + "(" + i +")";
+let checkContactsExistt = manageDomValues("checkContactsExistt");
+checkContactsExistt.textContent = "Contact" + " " + "(" + i +")";
+
+
+
+
+

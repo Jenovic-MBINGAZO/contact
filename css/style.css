@@ -584,12 +584,13 @@ p{
     align-items: center;
     /*background-color: red;*/
     width: 100%;
+    padding-bottom: 1rem;
 }
 .content__header--size{
     font-size: var(--content-header-size);
 }
 .header__name{
-    width: 27%;
+    width: 22%;
     font-size: 14px;
     color: var(--color-text-contact);
 }
@@ -606,9 +607,10 @@ p{
 
 .header__tel--padding-x{
     /*padding-right: var(--header-padding--rigth);*/
-    width: 15%;
+    width: 20%;
     font-size: 14px;
     color: var(--color-text-contact);
+    /* background-color: red; */
 }
 .header__function--padding-x{
     /*padding-right: var(--header-padding--rigth);*/
@@ -703,7 +705,7 @@ p{
 } */
 .contact-name{
 
-    width: 22%;
+    width: 17%;
     font-size: 14px;
     color: var(--color-text-contact);
     display: flex;
@@ -730,7 +732,7 @@ p{
     /* background-color: rgb(202, 199, 199); */
 }
 .contact-phone{
-    width: 15%;
+    width: 20%;
     display: flex;
     justify-content: center;
     /* gap: 2rem; */
@@ -807,6 +809,9 @@ p{
     background-color: var(--hover-links-color);
     border-radius: 5px;
     transition: background-color 0.5s ease-in-out;
+}
+.effect-trasition-icone{
+    transition: background-color 0.7s ease-in-out;
 }
 
 @media screen and (max-width : 1366px) {
