@@ -219,6 +219,7 @@ const contactData = {
 };
 
 
+
 // Save contacts to localStorage
 function saveContacts() {
     localStorage.setItem('tabNam', JSON.stringify(contactData.names));
@@ -297,7 +298,16 @@ function displayContacts() {
         const divIcone = document.createElement("div");
         divIcone.className = "contact-icone";
         divIcone.id = "contactIcone" + i;
-        let lengthName = contactData.names[1].length;
+        let lengthName = contactData.names.length;
+
+
+        const divInput = document.createElement("div");
+        divInput.className = "contact-input-bloc";
+        divInput.id = "contactInput" + i;
+
+       
+        
+
 
         //Disay first name for the contact
         for (let j = 0; j < lengthName; j++) {
@@ -323,26 +333,37 @@ function displayContacts() {
         functionDiv.textContent = contactData.functions[i];
 
         // add div in contactDIv
+        contactDiv.appendChild(divInput);
         contactDiv.appendChild(divIcone);
         contactDiv.appendChild(nameDiv);
         contactDiv.appendChild(emailDiv);
         contactDiv.appendChild(phoneDiv);
         contactDiv.appendChild(functionDiv);
+      
+        const inputCheckbox = document.createElement("input");
+        inputCheckbox.type = "checkbox";
+        inputCheckbox.className = "contact-input";
+
+        divInput.append(inputCheckbox);
+        // console.log(inputCheckbox);
+       
 
         // add contactDiv in main contener 
         mainContentListContact.appendChild(contactDiv);
 
         divIcone.addEventListener("mouseover",function(evt){
             divIcone.style.backgroundColor = "";
-            // divIcone.textContent = "";
+            divIcone.style.display = "none";
+            divInput.style.display = "flex";
         });
-        document.addEventListener("mouseover",function(evt){
-            if (evt.target !==  divIcone ) {
-                    divIcone.style.backgroundColor = (randomColor());
-                    divIcone.classList.add("effect-trasition-icone");
-                }
-            }
-        ); 
+        // document.addEventListener("mouseover",function(evt){
+        //     if (evt.target !==  divIcone ) {
+        //             divInput.style.display = "none";
+        //             divIcone.style.backgroundColor = (randomColor());
+        //             divIcone.classList.add("effect-trasition-icone");
+        //         }
+        //     }
+        // ); 
     }
 }
 
@@ -354,7 +375,6 @@ let compt = i +1;
 checkContactsExist.textContent = "Contact" + " " + "(" + i +")";
 let checkContactsExistt = manageDomValues("checkContactsExistt");
 checkContactsExistt.textContent = "Contact" + " " + "(" + i +")";
-
 
 
 
